@@ -24,10 +24,13 @@ main{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(390px,.85fr);gap
 #mixedPanel{display:none}.mixedControls{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 0}.pathHint{font-size:12px;color:#9fb0cf;padding:0 15px 14px}
 footer{padding:4px 20px 26px;color:#8393b3;font-size:12px;line-height:1.65}
 @media(max-width:1050px){main{grid-template-columns:1fr}header{position:static}}@media(max-width:620px){.lessonGrid{grid-template-columns:1fr}.cheatGrid{grid-template-columns:1fr}.toolbar button{flex:1}.progressWrap{max-width:none;min-width:100%}}
+
+/* Cross-topic navigation; independent of each learning map's state. */
+.topic-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 17px;padding:0 0 13px;border-bottom:1px solid #34415a;font:600 12px/1.5 system-ui,sans-serif}.topic-nav a{color:#bac9dd;text-decoration:none;padding:5px 8px;border-radius:6px}.topic-nav a:hover{background:#23354c;color:#fff}.topic-nav a:focus-visible{outline:3px solid #83e5cc;outline-offset:2px}.topic-nav a[aria-current=page]{background:#213e43;color:#a2eed8}.topic-nav .topic-home{color:#83e5cc}.topic-links,.topic-pager{display:flex;gap:3px;flex-wrap:wrap}.topic-pager{margin-left:auto}@media(max-width:600px){.topic-nav{gap:8px}.topic-links{order:3;flex-basis:100%}.topic-nav a{padding:5px 7px}}
 </style>
 </head>
 <body>
-<header>
+<header><nav class="topic-nav" aria-label="Topic navigation"><a class="topic-home" href="../../index.html">← All topics</a><div class="topic-links"><a href="../logic/index.html" aria-current="page">Logic</a><a href="../sets/index.html">Sets</a><a href="../relations/index.html">Relations</a><a href="../functions/index.html">Functions</a></div><div class="topic-pager"><a href="../sets/index.html">Sets →</a></div></nav>
   <h1>Logic.pdf — Interactive Learning Map · Enhanced</h1>
   <div class="sub">目标：让零基础学生通过“直觉解释 → 图解 → worked example → 易错点 → 练习 → 颜色反馈”掌握本章大部分内容，而不只是记住术语。</div>
   <div class="toolbar">

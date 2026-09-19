@@ -32,12 +32,14 @@ From the repository root:
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open [Logic](http://localhost:8000/modules/logic/),
+Start at the [topic guide](http://localhost:8000/) for instructions and links between maps.
+
+Or open [Logic](http://localhost:8000/modules/logic/),
 [Set Theory](http://localhost:8000/modules/sets/),
 [Relations](http://localhost:8000/modules/relations/), or
 [Functions](http://localhost:8000/modules/functions/).
 
-Alternatively, open a module's `index.html` directly. A local server gives browser
+Alternatively, open the root `index.html` for the topic guide, or any module directly. A local server gives browser
 storage a consistent origin. Keep the same hostname and port to access saved progress.
 Moving from a downloaded file to localhost does not migrate progress. Browser settings
 may block storage; clearing site data deletes it. GitHub file links show source rather
@@ -46,6 +48,7 @@ than a running map. No hosted deployment is configured in this repository.
 ## Repository layout
 
 ```text
+index.html     # topic guide and learning instructions
 modules/
   logic/       # index.html, README.md, references.md
   sets/        # index.html, README.md, references.md
