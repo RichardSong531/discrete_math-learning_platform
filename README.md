@@ -8,7 +8,7 @@ explore examples, practice, check mastery, and decide what to learn next.
 
 ## Current stage
 
-Three standalone HTML learning maps are available. Each bundles content, CSS, and
+Four standalone HTML learning maps are available. Each bundles content, CSS, and
 JavaScript, with no build step, framework, or backend required. These are working
 prototypes, not a completed or independently reviewed curriculum.
 
@@ -17,6 +17,7 @@ prototypes, not a completed or independently reviewed curriculum.
 | Logic | [Map](modules/logic/index.html) · [Notes](modules/logic/README.md) | 20 | 96 |
 | Set Theory | [Map](modules/sets/index.html) · [Notes](modules/sets/README.md) | 23 | 105 |
 | Relations | [Map](modules/relations/index.html) · [Notes](modules/relations/README.md) | 30 | 129 |
+| Functions | [Map](modules/functions/index.html) · [Notes](modules/functions/README.md) | 30 | 120 |
 
 Existing features include dependency graphs, visual explanations, worked examples,
 interactive practice, common mistakes, mastery checks, mixed review, cheat sheets,
@@ -32,8 +33,9 @@ python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
 Open [Logic](http://localhost:8000/modules/logic/),
-[Set Theory](http://localhost:8000/modules/sets/), or
-[Relations](http://localhost:8000/modules/relations/).
+[Set Theory](http://localhost:8000/modules/sets/),
+[Relations](http://localhost:8000/modules/relations/), or
+[Functions](http://localhost:8000/modules/functions/).
 
 Alternatively, open a module's `index.html` directly. A local server gives browser
 storage a consistent origin. Keep the same hostname and port to access saved progress.
@@ -48,6 +50,7 @@ modules/
   logic/       # index.html, README.md, references.md
   sets/        # index.html, README.md, references.md
   relations/   # index.html, README.md, references.md
+  functions/   # index.html, README.md, references.md, coverage.md
 docs/
   product-vision.md
   learning-model.md
@@ -67,7 +70,7 @@ extract shared data and components after stable patterns emerge.
 | --- | --- |
 | Logic | Prototype available |
 | Sets | Prototype available |
-| Functions | Planned |
+| Functions | Prototype available |
 | Relations | Prototype available |
 | Proofs | Planned |
 | Counting | Planned |
@@ -95,9 +98,9 @@ These features are not implemented. See the [product vision](docs/product-vision
 
 [Discrete Mathematics Resources](https://sites.google.com/view/discretemathematicsresources/home)
 is a proposed curriculum reference from the planning discussion. This import does not
-establish that the modules have been cross-checked against it. The HTML pages also refer
-to PDFs that were not provided. Mathematical review and source verification remain
-outstanding; see the [reference register](docs/references.md).
+establish that the modules have been cross-checked against it. The Functions module was reviewed against its supplied PDF;
+see its [source and coverage notes](modules/functions/references.md). Original source PDFs
+for the other three modules still need verification. See the [reference register](docs/references.md).
 
 ## Contributing and license
 

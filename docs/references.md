@@ -8,12 +8,14 @@ verified during this import. Do not describe the modules as validated against it
 
 ## Imported sources
 
-Source-page references are preserved in the HTML. The original PDFs, authors, editions,
-and reuse terms were not supplied. Filenames alone are insufficient bibliographic records.
+Source-page references are preserved in the HTML. Functions was reviewed against the supplied
+PDF by Jennifer F. Vasquez; see its module record for limitations. The original PDFs for Logic,
+Sets, and Relations still need identification. Filenames alone are insufficient bibliographic records.
 
 - [Logic](../modules/logic/references.md)
 - [Sets](../modules/sets/references.md)
 - [Relations](../modules/relations/references.md)
+- [Functions](../modules/functions/references.md)
 
 ## Recording reviewed sources
 

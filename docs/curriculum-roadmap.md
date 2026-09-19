@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 1 | Logic | Imported prototype | Review sources and correctness |
 | 2 | Sets | Imported prototype | Review sources and correctness |
-| 3 | Functions | Planned | Build a standalone map |
+| 3 | Functions | Reviewed prototype | Expand written-proof practice |
 | 4 | Relations | Imported prototype | Review sources and correctness |
 | 5 | Proofs | Planned | Build a standalone map |
 | 6 | Counting | Planned | Build a standalone map |
