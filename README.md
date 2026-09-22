@@ -8,7 +8,7 @@ explore examples, practice, check mastery, and decide what to learn next.
 
 ## Current stage
 
-Four standalone HTML learning maps are available. Each bundles content, CSS, and
+Five standalone HTML learning maps are available. Each bundles content, CSS, and
 JavaScript, with no build step, framework, or backend required. These are working
 prototypes, not a completed or independently reviewed curriculum.
 
@@ -18,6 +18,7 @@ prototypes, not a completed or independently reviewed curriculum.
 | Set Theory | [Map](modules/sets/index.html) · [Notes](modules/sets/README.md) | 23 | 105 |
 | Relations | [Map](modules/relations/index.html) · [Notes](modules/relations/README.md) | 30 | 129 |
 | Functions | [Map](modules/functions/index.html) · [Notes](modules/functions/README.md) | 30 | 120 |
+| Permutations | [Map](modules/permutations/index.html) · [Notes](modules/permutations/README.md) | 25 | 100 |
 
 Existing features include dependency graphs, visual explanations, worked examples,
 interactive practice, common mistakes, mastery checks, mixed review, cheat sheets,
@@ -36,8 +37,9 @@ Start at the [topic guide](http://localhost:8000/) for instructions and links be
 
 Or open [Logic](http://localhost:8000/modules/logic/),
 [Set Theory](http://localhost:8000/modules/sets/),
-[Relations](http://localhost:8000/modules/relations/), or
-[Functions](http://localhost:8000/modules/functions/).
+[Relations](http://localhost:8000/modules/relations/),
+[Functions](http://localhost:8000/modules/functions/), or
+[Permutations](http://localhost:8000/modules/permutations/).
 
 Alternatively, open the root `index.html` for the topic guide, or any module directly. A local server gives browser
 storage a consistent origin. Keep the same hostname and port to access saved progress.
@@ -54,6 +56,7 @@ modules/
   sets/        # index.html, README.md, references.md
   relations/   # index.html, README.md, references.md
   functions/   # index.html, README.md, references.md, coverage.md
+  permutations/ # index.html, README.md, references.md, coverage.md
 docs/
   product-vision.md
   learning-model.md
@@ -67,14 +70,15 @@ Only existing modules receive directories. Planned topics live in the roadmap un
 usable content exists. Keep modules standalone while developing the curriculum;
 extract shared data and components after stable patterns emerge.
 
-## Eight-world roadmap
+## Nine-world roadmap
 
 | World | Status |
 | --- | --- |
 | Logic | Prototype available |
 | Sets | Prototype available |
-| Functions | Prototype available |
 | Relations | Prototype available |
+| Functions | Reviewed prototype |
+| Permutations | Reviewed prototype |
 | Proofs | Planned |
 | Counting | Planned |
 | Graphs | Planned |
@@ -101,9 +105,9 @@ These features are not implemented. See the [product vision](docs/product-vision
 
 [Discrete Mathematics Resources](https://sites.google.com/view/discretemathematicsresources/home)
 is a proposed curriculum reference from the planning discussion. This import does not
-establish that the modules have been cross-checked against it. The Functions module was reviewed against its supplied PDF;
-see its [source and coverage notes](modules/functions/references.md). Original source PDFs
-for the other three modules still need verification. See the [reference register](docs/references.md).
+establish that the modules have been cross-checked against it. The Functions and Permutations modules were reviewed against their supplied PDFs; see the
+[Functions](modules/functions/references.md) and [Permutations](modules/permutations/references.md)
+source notes. Original source PDFs for Logic, Sets, and Relations still need verification. See the [reference register](docs/references.md).
 
 ## Contributing and license
 

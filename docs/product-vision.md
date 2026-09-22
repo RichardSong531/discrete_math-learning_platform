@@ -5,12 +5,12 @@ through a visual mastery roadmap that supplements a Discrete Mathematics course.
 
 ## Available today
 
-Four standalone maps with module-local practice and browser-local mastery.
+Five standalone maps with module-local practice and browser-local mastery.
 Their content and interfaces remain prototypes requiring systematic review.
 
 ## Planned experience
 
-Connect eight worlds into a shared knowledge graph. Add 15–30 minute Daily Quests,
+Connect nine worlds into a shared knowledge graph. Add 15–30 minute Daily Quests,
 accounts and synchronized mastery, a personal mistake collection, spaced and targeted
 review, weak-topic detection, adaptive practice, and progress visualization.
 

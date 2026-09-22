@@ -6,14 +6,16 @@
 | --- | --- | --- | --- |
 | 1 | Logic | Imported prototype | Review sources and correctness |
 | 2 | Sets | Imported prototype | Review sources and correctness |
-| 3 | Functions | Reviewed prototype | Expand written-proof practice |
-| 4 | Relations | Imported prototype | Review sources and correctness |
-| 5 | Proofs | Planned | Build a standalone map |
-| 6 | Counting | Planned | Build a standalone map |
-| 7 | Graphs | Planned | Build a standalone map |
-| 8 | Recurrences | Planned | Build a standalone map |
+| 3 | Relations | Imported prototype | Review sources and correctness |
+| 4 | Functions | Reviewed prototype | Expand written-proof practice |
+| 5 | Permutations | Reviewed prototype | Expand computation and written-proof practice |
+| 6 | Proofs | Planned | Build a standalone map |
+| 7 | Counting | Planned | Build a standalone map |
+| 8 | Graphs | Planned | Build a standalone map |
+| 9 | Recurrences | Planned | Build a standalone map |
 
-Sets includes a Logic-to-Sets bridge; Relations includes a Set/Logic prerequisite bridge.
+Sets includes a Logic-to-Sets bridge; Relations includes a Set/Logic prerequisite bridge;
+Functions builds on Relations; and Permutations begins with a Functions/bijections bridge.
 Use these when designing the future cross-topic graph. The sequence is provisional;
 topics overlap and proof techniques may be introduced earlier.
 

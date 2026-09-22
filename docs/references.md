@@ -9,13 +9,15 @@ verified during this import. Do not describe the modules as validated against it
 ## Imported sources
 
 Source-page references are preserved in the HTML. Functions was reviewed against the supplied
-PDF by Jennifer F. Vasquez; see its module record for limitations. The original PDFs for Logic,
-Sets, and Relations still need identification. Filenames alone are insufficient bibliographic records.
+PDF by Jennifer F. Vasquez, and Permutations against the supplied PDF by Steven T. Dougherty;
+see their module records for limitations. The original PDFs for Logic, Sets, and Relations still
+need identification. Filenames alone are insufficient bibliographic records.
 
 - [Logic](../modules/logic/references.md)
 - [Sets](../modules/sets/references.md)
 - [Relations](../modules/relations/references.md)
 - [Functions](../modules/functions/references.md)
+- [Permutations](../modules/permutations/references.md)
 
 ## Recording reviewed sources
 
