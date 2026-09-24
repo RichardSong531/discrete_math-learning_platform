@@ -114,3 +114,7 @@ source notes. Original source PDFs for Logic, Sets, and Relations still need ver
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow and manual acceptance checks.
 The repository retains its existing [GNU AGPL v3 license](LICENSE).
 Third-party materials retain their own terms; a citation does not grant reuse rights.
+
+## Disclaim
+
+All source knowledge are coming from https://sites.google.com/view/discretemathematicsresources/home?pli=1&authuser=0
