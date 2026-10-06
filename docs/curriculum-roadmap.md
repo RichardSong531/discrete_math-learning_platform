@@ -9,13 +9,16 @@
 | 3 | Relations | Imported prototype | Review sources and correctness |
 | 4 | Functions | Reviewed prototype | Expand written-proof practice |
 | 5 | Permutations | Reviewed prototype | Expand computation and written-proof practice |
-| 6 | Proofs | Planned | Build a standalone map |
-| 7 | Counting | Planned | Build a standalone map |
-| 8 | Graphs | Planned | Build a standalone map |
-| 9 | Recurrences | Planned | Build a standalone map |
+| 6 | Integers | Reviewed prototype | Expand written proofs and algorithm-tracing practice |
+| 7 | Proofs | Planned | Build a standalone map |
+| 8 | Counting | Planned | Build a standalone map |
+| 9 | Graphs | Planned | Build a standalone map |
+| 10 | Recurrences | Planned | Build a standalone map |
 
 Sets includes a Logic-to-Sets bridge; Relations includes a Set/Logic prerequisite bridge;
-Functions builds on Relations; and Permutations begins with a Functions/bijections bridge.
+Functions builds on Relations; Permutations begins with a Functions/bijections bridge;
+and Integers connects divisibility, base representation, primes, and Euclidean algorithms.
+The suggested browsing order does not require finishing Permutations before studying Integers.
 Use these when designing the future cross-topic graph. The sequence is provisional;
 topics overlap and proof techniques may be introduced earlier.
 

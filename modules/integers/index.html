@@ -1,0 +1,2578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Integers & Number Theory — Interactive Learning Map</title>
+<style>
+:root{--bg:#09101d;--panel:#121a2e;--card:#17233b;--card2:#0e1729;--text:#eef4ff;--muted:#a4b2cc;--line:#435477;--gray:#59657a;--blue:#3b82f6;--red:#ef4444;--amber:#f59e0b;--green:#22c55e;--cyan:#22d3ee;--purple:#a78bfa}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#080d18,#0b1324 55%,#09111e);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,select{font:inherit}button{border:1px solid #3b4a6b;background:#17233e;color:var(--text);border-radius:10px;padding:9px 12px;cursor:pointer;font-weight:700}button:hover{background:#20304f}button.primary{background:#24458d;border-color:#426bd1}.danger{border-color:#6a3840}
+header{padding:20px 24px 14px;border-bottom:1px solid #25304a;background:rgba(8,13,24,.95);position:sticky;top:0;z-index:30;backdrop-filter:blur(10px)}h1{font-size:24px;margin:0 0 6px}.sub{color:var(--muted);font-size:14px;line-height:1.55}.loaded{margin-top:7px;color:#7ee7ac;font-size:12px;font-weight:700}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px;align-items:center}.progressWrap{min-width:230px;flex:1;max-width:430px}.progressBar{height:10px;background:#202b42;border-radius:999px;overflow:hidden}.progressFill{height:100%;width:0;background:linear-gradient(90deg,#38bdf8,#22c55e);transition:width .25s}.legend{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12px}.dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:5px}
+#cheatPanel{display:none;padding:16px 24px;background:#0e1728;border-bottom:1px solid #2a3753}.cheatHead{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.search{min-width:240px;flex:1;max-width:420px;background:#0a1221;color:var(--text);border:1px solid #344664;border-radius:10px;padding:10px 12px}.cheatGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:8px;margin-top:12px}.cheatItem{padding:10px;border:1px solid #2e3d5b;border-radius:10px;background:#111b30}.cheatItem b{display:block;font-size:13px}.cheatItem .zh{color:#8ec5ff}.formula{font-family:"SFMono-Regular",Consolas,monospace;color:#c9f3ff;font-size:12px;margin-top:5px}.desc{font-size:12px;color:#adbbd4;line-height:1.45;margin-top:4px}
+main{display:grid;grid-template-columns:minmax(0,1.48fr) minmax(420px,.82fr);gap:16px;padding:18px;align-items:start}.panel{background:rgba(18,26,46,.9);border:1px solid #26324d;border-radius:16px;overflow:hidden}.panelTitle{padding:12px 15px;border-bottom:1px solid #26324d;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;align-items:center}.graphScroll{overflow:auto;padding:10px}.graphScroll svg{display:block;min-width:2680px;width:100%;height:auto;background:radial-gradient(circle at 50% 35%,rgba(66,93,150,.14),transparent 56%)}.node rect{stroke-width:2;cursor:pointer;transition:.15s}.node:hover rect{filter:brightness(1.13);stroke-width:3}.node text{fill:#fff;pointer-events:none;font-size:11px;font-weight:750}.node .small{font-size:8.5px;font-weight:500;fill:#d7e0f5}.edge{stroke:var(--line);stroke-width:2;fill:none;opacity:.55}.edge.hl{stroke:var(--cyan);stroke-width:4;opacity:1}.node.dep rect{stroke:var(--cyan)!important;stroke-width:4}.node.selected rect{stroke:#fff!important;stroke-width:4;filter:brightness(1.12)}
+.nextList{padding:12px 15px 16px;display:flex;gap:8px;flex-wrap:wrap}.nextBtn{font-size:12px;padding:7px 9px}.pathHint{font-size:12px;color:#9fb0cf;padding:0 15px 14px;line-height:1.6}.details{padding:17px}.badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}.badge{font-size:12px;border:1px solid #344664;background:#15213a;border-radius:999px;padding:4px 8px;color:#cbd8ef}.scorePill{display:inline-flex;align-items:center;padding:4px 8px;border-radius:999px;font-size:12px;font-weight:800}.details h2{font-size:21px;margin:5px 0 2px}.zhTitle{color:#8ec5ff;font-size:14px;font-weight:700;margin-bottom:12px}.summary{color:#d5dff2;line-height:1.66;font-size:14px}.keys{margin:10px 0;padding-left:20px;color:#d8e4fa;font-size:14px;line-height:1.7}.sectionTitle{font-size:14px;font-weight:800;margin-top:14px}
+.lessonGrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}.lessonCard{border:1px solid #30405d;background:#10192c;border-radius:12px;padding:11px;min-width:0}.lessonCard h4{margin:0 0 5px;font-size:12px;color:#9ac7ff;text-transform:uppercase;letter-spacing:.04em}.lessonCard p{margin:0;color:#d2ddef;font-size:13px;line-height:1.55}.lessonCard.warn{border-color:#604b2c}.lessonCard.memory{border-color:#365b4c}
+.visual{margin:14px 0;border:1px solid #344662;border-radius:14px;background:#0d1628;padding:13px}.visualTitle{font-size:12px;color:#9fb0cf;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}.flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}.box{border:1px solid #405274;background:#17233b;border-radius:11px;padding:10px 12px;text-align:center;min-width:112px}.box strong{display:block}.arrow{color:#8ec5ff;font-weight:900;font-size:18px}.good{border-color:#2e7047;background:#11271c}.bad{border-color:#7b3f45;background:#29171a}.mid{border-color:#76602f;background:#282113}.tiny{font-size:12px;color:#aebcd5;line-height:1.45}.formulaBig{font-family:"SFMono-Regular",Consolas,monospace;font-size:15px;color:#dff7ff}.depBox{margin:13px 0;padding:11px;border:1px solid #314160;border-radius:12px;background:#10182b;font-size:13px;color:#c5d2ea}
+.calcGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.calcGrid label{font-size:12px;color:#aebcd5}.calcGrid input,.calcGrid select{width:100%;margin-top:4px;background:#0b1425;border:1px solid #344664;border-radius:8px;color:#fff;padding:8px}.calcResult{text-align:center;font-size:18px;font-weight:850;margin-top:10px;color:#7ee7ac}.formulaPanel{padding:10px;border:1px solid #3a4b69;border-radius:10px;background:#0c1628;font-family:"SFMono-Regular",Consolas,monospace;line-height:1.7;overflow:auto}.statusBox{padding:10px;border-radius:10px;border:1px solid #405274;background:#111c31;text-align:center;margin-top:10px}.statusBox.ok{border-color:#2e7047;background:#11271c}.statusBox.bad{border-color:#7b3f45;background:#29171a}.propGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:10px}.propPill{padding:8px;border:1px solid #405274;border-radius:9px;text-align:center;font-size:12px}.propPill.yes{border-color:#2e7047;background:#11271c}.propPill.no{border-color:#7b3f45;background:#29171a}.pillRow{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}.pill{border:1px solid #405274;border-radius:999px;padding:6px 10px;background:#15213a;font-size:12px}.pill.on{border-color:#2e7047;background:#11271c}.stepTable{width:100%;border-collapse:collapse;margin-top:10px;font-size:12px}.stepTable th,.stepTable td{border:1px solid #3a4b69;padding:6px 7px;text-align:center}.stepTable th{background:#17233a}.sieveGrid{display:grid;grid-template-columns:repeat(10,minmax(32px,1fr));gap:5px;margin-top:10px}.sieveCell{padding:7px 2px;border:1px solid #405274;border-radius:7px;text-align:center;background:#111c31;font-size:12px}.sieveCell.prime{border-color:#2e7047;background:#11271c}.sieveCell.comp{opacity:.45;text-decoration:line-through}.bigEq{font-family:"SFMono-Regular",Consolas,monospace;color:#dff7ff;font-size:16px;text-align:center;line-height:1.7;margin-top:9px}.note{font-size:11px;color:#8ea0bf;margin-top:7px;line-height:1.5}
+.quiz{margin-top:16px;border-top:1px solid #2a3753;padding-top:16px}.quizHead{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.masteryRule{font-size:12px;color:#9fb0cf;margin-top:5px}.q{margin:13px 0;padding:12px;border:1px solid #30405e;border-radius:12px;background:#111a2d}.q strong{display:block;margin-bottom:8px}.opt{display:block;padding:6px 4px;color:#d7e2f7;font-size:14px;border-radius:7px}.opt.correct{background:rgba(34,197,94,.13)}.opt.wrong{background:rgba(239,68,68,.13)}.explain{margin-top:8px;color:#b8c9e6;font-size:12px;line-height:1.5;padding-top:7px;border-top:1px dashed #33425f}.result{margin-top:12px;padding:12px;border-radius:10px;background:#101827;color:#d6e5ff;font-size:14px;line-height:1.55}.empty{color:var(--muted);padding:34px 8px;text-align:center}footer{padding:4px 20px 26px;color:#8393b3;font-size:12px;line-height:1.65}
+@media(max-width:1100px){main{grid-template-columns:1fr}header{position:static}}@media(max-width:680px){.lessonGrid,.calcGrid,.propGrid{grid-template-columns:1fr}.cheatGrid{grid-template-columns:1fr}.toolbar button{flex:1}.progressWrap{max-width:none;min-width:100%}.sieveGrid{grid-template-columns:repeat(5,1fr)}}
+:focus-visible{outline:3px solid #67e8f9;outline-offset:3px}.node:focus-visible rect{stroke:#67e8f9;stroke-width:4}button:disabled{opacity:.55;cursor:default}.panel,.visual,.details{min-width:0}.lessonCard{overflow-wrap:anywhere}.formulaPanel{overflow-wrap:anywhere}.note{overflow-wrap:anywhere}input[aria-invalid=true]{border-color:#f87171}#labFeedback{color:#fecaca}#lessonTitle:focus{outline-offset:5px}@media(max-width:620px){main{grid-template-columns:minmax(0,1fr);padding:10px}.search{min-width:0}}
+/* Cross-topic navigation; independent of each learning map's state. */
+.topic-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 17px;padding:0 0 13px;border-bottom:1px solid #34415a;font:600 12px/1.5 system-ui,sans-serif}.topic-nav a{color:#bac9dd;text-decoration:none;padding:5px 8px;border-radius:6px}.topic-nav a:hover{background:#23354c;color:#fff}.topic-nav a:focus-visible{outline:3px solid #83e5cc;outline-offset:2px}.topic-nav a[aria-current=page]{background:#213e43;color:#a2eed8}.topic-nav .topic-home{color:#83e5cc}.topic-links,.topic-pager{display:flex;gap:3px;flex-wrap:wrap}.topic-pager{margin-left:auto}@media(max-width:600px){.topic-nav{gap:8px}.topic-links{order:3;flex-basis:100%}.topic-nav a{padding:5px 7px}}
+</style>
+</head>
+<body>
+<header><nav class="topic-nav" aria-label="Topic navigation"><a class="topic-home" href="../../index.html">← All topics</a><div class="topic-links"><a href="../logic/index.html">Logic</a><a href="../sets/index.html">Sets</a><a href="../relations/index.html">Relations</a><a href="../functions/index.html">Functions</a><a href="../permutations/index.html">Permutations</a><a href="../integers/index.html" aria-current="page">Integers</a></div><div class="topic-pager"><a href="../permutations/index.html">← Permutations</a><a href="../../index.html">All topics →</a></div></nav>
+<h1>Integers & Number Theory — Interactive Learning Map</h1>
+<div class="sub">Based on integer.pdf · integer structure → well-ordering → division & divisibility → parity → divisibility rules → base representation → primes & factorization → gcd/lcm → Euclidean algorithms → prime search → factorial/floor/ceiling → mastery.</div>
+<div class="loaded">Loaded curriculum: 34 knowledge nodes · 136 practice questions · 48 cheat-sheet terms · source coverage: Properties of Integers, Division, Divisibility Rules, Base Representation, Prime Numbers, GCD/LCM, Euclidean Algorithm, Prime Search, and Integer Functions</div>
+<div class="toolbar">
+<div class="progressWrap"><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px"><span>Mastery</span><span id="progressText"></span></div><div class="progressBar"><div id="progressFill" class="progressFill"></div></div></div>
+<button id="nextBtn" class="primary">Recommended next</button><button id="cheatBtn" aria-controls="cheatPanel" aria-expanded="false">Cheat Sheet / <span lang="zh-CN">术语表</span></button><button id="mixedBtn">Mixed Practice</button><button id="resetBtn" class="danger">Reset</button>
+<div class="legend"><span><i class="dot" style="background:var(--gray)"></i>Not started</span><span><i class="dot" style="background:var(--blue)"></i>Learning</span><span><i class="dot" style="background:var(--red)"></i>Review</span><span><i class="dot" style="background:var(--amber)"></i>Partial</span><span><i class="dot" style="background:var(--green)"></i>Mastered 4/4</span></div>
+</div></header>
+<section id="cheatPanel"><div class="cheatHead"><div><strong>Integers / Number Theory Cheat Sheet · <span lang="zh-CN">术语速查</span></strong><div class="tiny">Search English, <span lang="zh-CN">中文</span>, symbol, rule, or formula.</div></div><input id="cheatSearch" class="search" aria-label="Search the integer terminology cheat sheet" placeholder="e.g. gcd, 互质, Euclid, divisibility by 7"></div><div id="cheatGrid" class="cheatGrid"></div></section>
+<noscript><div style="margin:18px;padding:16px;border:1px solid #7b3f45;border-radius:12px;background:#29171a;color:#fff">This interactive map requires JavaScript to be enabled.</div></noscript>
+<main>
+<section class="panel">
+<div class="panelTitle"><span>Knowledge dependency graph</span><span>Arrow = prerequisite → next concept</span></div>
+<div class="graphScroll"><svg id="graph" viewBox="0 0 2620 1010" aria-label="Integers knowledge dependency graph"><defs><marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#435477"/></marker></defs><g id="edges"></g><g id="nodes"></g></svg></div>
+<div class="panelTitle"><span>Good next nodes</span><span>Dependencies mastered first</span></div><div id="nextList" class="nextList"></div>
+<div class="pathHint">Learning strategy: keep returning to one idea—<b>division with remainder</b>. It explains parity, digit/base algorithms, gcd steps, and many divisibility tests. For proofs, translate statements into definitions such as b=ak, 2k/2k+1, or gcd=ax+by before manipulating algebraically.</div>
+</section>
+<aside class="panel"><div class="panelTitle"><span>Lesson + interactive lab + mastery check</span><span id="stateLabel">Select a node</span></div><div id="details" class="details"><div class="empty">Select a knowledge node to view its definition, bilingual terminology, worked example, interactive lab, and mastery check.</div></div></aside>
+</main>
+<footer>Definitions, theorem relationships, examples, and exercise themes are grounded in the uploaded integer.pdf. Visual dependency mapping, calculators, interactive labs, memory hooks, and additional practice questions are pedagogical extensions. Where the source contains an apparent internal typo, the page explicitly flags the note instead of silently changing it. Progress is stored locally in this browser.</footer>
+<script>
+const DATA=[
+  {
+    "id": "integers",
+    "title": "1. Integers & Number Theory",
+    "zh": "整数与数论",
+    "group": "Foundations",
+    "pages": "1",
+    "deps": [],
+    "summary": "The chapter introduces number theory as the study of integers ℤ={…,−3,−2,−1,0,1,2,3,…}, with later applications to divisibility, primes, algorithms, bases, and cryptography.",
+    "key": [
+      "ℤ contains 0, positive integers, and negative integers",
+      "Number theory studies arithmetic structure of integers",
+      "The chapter connects classical results with modern information/cryptography applications"
+    ],
+    "intuition": "Think of integers as the discrete number line on which divisibility, remainders, prime factors, and algorithms all live.",
+    "why": "Almost every later node assumes comfort with integer notation, signs, and the idea that integer arithmetic has extra structure not shared by arbitrary real numbers.",
+    "worked": "−7, 0, and 42 are integers; 1/2 and √2 are not integers.",
+    "mistake": "Do not confuse ℕ with ℤ. In this PDF, ℕ is written as {0,1,2,3,…}, while ℤ extends in both positive and negative directions.",
+    "memory": "ℤ = whole-number steps in both directions, including 0.",
+    "quiz": [
+      {
+        "q": "Which set is denoted by ℤ?",
+        "o": [
+          "Integers",
+          "Natural numbers only",
+          "Rational numbers",
+          "Real numbers"
+        ],
+        "a": 0,
+        "why": "The chapter explicitly uses ℤ for the integers."
+      },
+      {
+        "q": "Which value is an integer?",
+        "o": [
+          "3/5",
+          "√2",
+          "−12",
+          "π"
+        ],
+        "a": 2,
+        "why": "−12 belongs to ℤ."
+      },
+      {
+        "q": "Which value is included in the PDF's ℕ?",
+        "o": [
+          "−1",
+          "0",
+          "1/2",
+          "π"
+        ],
+        "a": 1,
+        "why": "The PDF writes ℕ={0,1,2,3,…}."
+      },
+      {
+        "q": "A major modern application area mentioned for number theory is:",
+        "o": [
+          "Cryptography",
+          "Only Euclidean geometry",
+          "Weather forecasting only",
+          "Color theory"
+        ],
+        "a": 0,
+        "why": "The introduction highlights cryptography and information theory."
+      }
+    ]
+  },
+  {
+    "id": "wellorder",
+    "title": "2. Well-Ordering Principle",
+    "zh": "良序原理",
+    "group": "Foundations",
+    "pages": "1–2",
+    "deps": [
+      "integers"
+    ],
+    "summary": "Every nonempty subset of the natural numbers has a smallest element. The PDF uses this principle to prove the Division Algorithm.",
+    "key": [
+      "Applies to nonempty subsets of ℕ",
+      "Guarantees a least element",
+      "Does not hold for every subset of ℤ or ℝ",
+      "Used as an existence tool in proofs"
+    ],
+    "intuition": "If you choose any nonempty collection of natural numbers, eventually there is a first one—you cannot descend forever inside ℕ.",
+    "why": "The chapter repeatedly uses least-element arguments to prove division, gcd existence, and prime-factor facts.",
+    "worked": "{7,12,20,…} has smallest element 7. The set of all negative integers has no smallest element.",
+    "mistake": "The principle is not 'every set of numbers has a minimum.' The domain matters: it is stated for nonempty subsets of ℕ.",
+    "memory": "Nonempty subset of ℕ ⇒ there is a least member.",
+    "quiz": [
+      {
+        "q": "What does the Well-Ordering Principle guarantee?",
+        "o": [
+          "Every nonempty subset of ℕ has a smallest element",
+          "Every subset of ℝ has a smallest element",
+          "Every subset of ℤ is finite",
+          "Every integer is positive"
+        ],
+        "a": 0,
+        "why": "That is the statement given in the PDF."
+      },
+      {
+        "q": "Which set is used as a counterexample for ℤ?",
+        "o": [
+          "All negative integers",
+          "{1,2,3}",
+          "Even natural numbers",
+          "{0}"
+        ],
+        "a": 0,
+        "why": "The negative integers have no smallest element."
+      },
+      {
+        "q": "The Well-Ordering Principle is used to prove the:",
+        "o": [
+          "Division Algorithm",
+          "Vertical line test",
+          "Chain rule",
+          "Binomial theorem only"
+        ],
+        "a": 0,
+        "why": "The PDF immediately uses it in the proof of the Division Algorithm."
+      },
+      {
+        "q": "Why must the subset be nonempty?",
+        "o": [
+          "An empty set has no element that could be smallest",
+          "Because 0 is not natural",
+          "Because all sets are infinite",
+          "Because integers are unordered"
+        ],
+        "a": 0,
+        "why": "A minimum must be an actual member."
+      }
+    ]
+  },
+  {
+    "id": "division",
+    "title": "3. Division Algorithm",
+    "zh": "整数除法算法",
+    "group": "Division",
+    "pages": "2–3",
+    "deps": [
+      "wellorder"
+    ],
+    "summary": "For integers a,b with a≠0, there exist unique integers q,r such that b=aq+r and 0≤r<|a|.",
+    "key": [
+      "b=aq+r",
+      "a≠0",
+      "q,r∈ℤ",
+      "0≤r<|a|",
+      "q and r are unique"
+    ],
+    "intuition": "Division places b into a block of width |a|: q counts how many signed divisor-steps you take and r is the nonnegative leftover.",
+    "why": "Divisibility, modular thinking, parity, base conversion, and the Euclidean Algorithm all build on this representation.",
+    "worked": "75=6·12+3. Also −151=9·(−17)+2. The remainder must satisfy 0≤r<|a|.",
+    "mistake": "For negative dividends, do not accept a negative remainder just because an ordinary calculator gives one. The PDF's lemma requires a nonnegative remainder.",
+    "memory": "Divide = quotient steps + a remainder in [0,|a|).",
+    "quiz": [
+      {
+        "q": "Which equation matches the Division Algorithm?",
+        "o": [
+          "b=aq+r",
+          "a=bq+r",
+          "r=ab+q",
+          "q=ar+b"
+        ],
+        "a": 0,
+        "why": "The lemma states b=aq+r."
+      },
+      {
+        "q": "What range must r satisfy?",
+        "o": [
+          "0≤r<|a|",
+          "−|a|<r≤0",
+          "0<r≤|a|",
+          "Any integer"
+        ],
+        "a": 0,
+        "why": "That is the formal remainder condition."
+      },
+      {
+        "q": "For −151 divided by 9, the PDF gives r=",
+        "o": [
+          "−7",
+          "2",
+          "8",
+          "9"
+        ],
+        "a": 1,
+        "why": "−151=9(−17)+2."
+      },
+      {
+        "q": "The quotient and remainder are:",
+        "o": [
+          "Unique under the stated remainder condition",
+          "Never unique",
+          "Unique only for positive b",
+          "Always both positive"
+        ],
+        "a": 0,
+        "why": "The lemma proves uniqueness."
+      }
+    ]
+  },
+  {
+    "id": "signeddivision",
+    "title": "4. Signed Quotient & Remainder",
+    "zh": "带符号整数的商与余数",
+    "group": "Division",
+    "pages": "3–4",
+    "deps": [
+      "division"
+    ],
+    "summary": "The Division Algorithm works with negative divisors or dividends as long as the remainder stays in the required interval 0≤r<|a|.",
+    "key": [
+      "Divisor may be negative",
+      "Dividend may be negative",
+      "Remainder still nonnegative",
+      "Exact division uses r=0"
+    ],
+    "intuition": "Signs change the quotient, but the remainder convention stays anchored to the nonnegative interval.",
+    "why": "Signed examples expose the difference between mathematical Euclidean remainder and language-specific remainder operators.",
+    "worked": "101=(−7)(−14)+3 and −151=9(−17)+2.",
+    "mistake": "−151=9(−16)−7 is an equality, but it is not the Division Algorithm form because r=−7 violates 0≤r<9.",
+    "memory": "Signs may move into q; r stays nonnegative.",
+    "quiz": [
+      {
+        "q": "For 101 divided by −7, the PDF gives q=",
+        "o": [
+          "14",
+          "−14",
+          "−15",
+          "15"
+        ],
+        "a": 1,
+        "why": "101=(−7)(−14)+3."
+      },
+      {
+        "q": "Why is −151=9(−16)−7 not the required form?",
+        "o": [
+          "The remainder is negative",
+          "The quotient is negative",
+          "The divisor is positive",
+          "The equality is false"
+        ],
+        "a": 0,
+        "why": "The remainder condition fails."
+      },
+      {
+        "q": "If a divides b exactly, the Division Algorithm remainder is:",
+        "o": [
+          "0",
+          "1",
+          "a",
+          "b"
+        ],
+        "a": 0,
+        "why": "Exact division means no leftover."
+      },
+      {
+        "q": "For a negative divisor, the upper remainder bound uses:",
+        "o": [
+          "a",
+          "|a|",
+          "−|a|",
+          "b"
+        ],
+        "a": 1,
+        "why": "The lemma uses 0≤r<|a|."
+      }
+    ]
+  },
+  {
+    "id": "divisibility",
+    "title": "5. Divisibility",
+    "zh": "整除",
+    "group": "Divisibility",
+    "pages": "4",
+    "deps": [
+      "division"
+    ],
+    "summary": "For integers a,b with a≠0, a divides b, written a|b, when there exists c∈ℤ such that ac=b. If no such integer exists, write a∤b.",
+    "key": [
+      "a|b ⇔ ∃c∈ℤ with ac=b",
+      "Remainder 0 means divisibility",
+      "±a divide 0",
+      "±1 divide every integer"
+    ],
+    "intuition": "a|b means b lands exactly on an integer multiple of a—no remainder.",
+    "why": "Divisibility is the language used throughout the rest of the chapter for parity, primes, gcd, lcm, and divisibility rules.",
+    "worked": "21|84 because 84=21·4. But 6∤44 because 44=6·7+2.",
+    "mistake": "a|b does not mean a/b is an integer; it means b/a is an integer.",
+    "memory": "a|b reads 'a divides b' and means b=a·integer.",
+    "quiz": [
+      {
+        "q": "What does a|b mean?",
+        "o": [
+          "b=ac for some c∈ℤ",
+          "a=bc for some c∈ℤ",
+          "a<b",
+          "a and b are prime"
+        ],
+        "a": 0,
+        "why": "That is the definition."
+      },
+      {
+        "q": "Which statement is true?",
+        "o": [
+          "21|84",
+          "6|44",
+          "10∤130",
+          "7∤77"
+        ],
+        "a": 0,
+        "why": "84=21·4."
+      },
+      {
+        "q": "If a|b, the remainder when b is divided by a is:",
+        "o": [
+          "0",
+          "1",
+          "a",
+          "Unknown"
+        ],
+        "a": 0,
+        "why": "Divisibility is exact division."
+      },
+      {
+        "q": "For nonzero a, does a divide 0?",
+        "o": [
+          "Yes",
+          "No"
+        ],
+        "a": 0,
+        "why": "0=a·0."
+      }
+    ]
+  },
+  {
+    "id": "properperfect",
+    "title": "6. Proper Divisors & Perfect Numbers",
+    "zh": "真因子与完全数",
+    "group": "Divisibility",
+    "pages": "4–5",
+    "deps": [
+      "divisibility"
+    ],
+    "summary": "A positive proper divisor of positive n divides n and is smaller than n. A perfect number equals the sum of its positive proper divisors.",
+    "key": [
+      "Proper divisor: k|n and k<n",
+      "Perfect: sum(proper positive divisors)=n",
+      "6 and 28 are examples in the PDF",
+      "Amicable-style example: 220 and 284 have cross-summing proper divisors"
+    ],
+    "intuition": "Proper divisors are the pieces below the whole number. A perfect number is exactly balanced by the sum of those pieces.",
+    "why": "This turns divisibility into a concrete structure you can explore computationally and later connects to Mersenne primes.",
+    "worked": "6 has proper positive divisors 1,2,3 and 1+2+3=6, so 6 is perfect.",
+    "mistake": "By the stated definition, n itself is not a proper divisor because the condition requires k<n.",
+    "memory": "Perfect = proper divisors add back to the number.",
+    "quiz": [
+      {
+        "q": "Which number is identified as the smallest perfect number?",
+        "o": [
+          "4",
+          "6",
+          "8",
+          "10"
+        ],
+        "a": 1,
+        "why": "6=1+2+3."
+      },
+      {
+        "q": "A positive proper divisor k of n must satisfy:",
+        "o": [
+          "k|n and k<n",
+          "k∤n and k<n",
+          "k=n always",
+          "k>n"
+        ],
+        "a": 0,
+        "why": "That is the definition."
+      },
+      {
+        "q": "Which is a perfect number given in the PDF?",
+        "o": [
+          "21",
+          "28",
+          "25",
+          "27"
+        ],
+        "a": 1,
+        "why": "1+2+4+7+14=28."
+      },
+      {
+        "q": "Why is 21 not perfect?",
+        "o": [
+          "Its proper divisors sum to 11",
+          "It has no divisors",
+          "It is prime",
+          "It is even"
+        ],
+        "a": 0,
+        "why": "The PDF computes 1+3+7=11."
+      }
+    ]
+  },
+  {
+    "id": "divprops",
+    "title": "7. Core Divisibility Properties",
+    "zh": "整除基本性质",
+    "group": "Divisibility",
+    "pages": "5–6",
+    "deps": [
+      "divisibility"
+    ],
+    "summary": "The chapter develops reusable rules: sign changes preserve divisibility, divisibility is transitive, and a common divisor of b and c divides every integer linear combination bx+cy.",
+    "key": [
+      "a|b ⇔ ±a divide ±b in the corresponding sign forms",
+      "a|b ⇒ a|bc",
+      "a|b and b|c ⇒ a|c",
+      "a|b and a|c ⇒ a|(b+c)",
+      "a|b and a|c ⇒ a|(bx+cy)"
+    ],
+    "intuition": "Once a is a common building block of b and c, any integer-scaled combination of b and c is still built from a.",
+    "why": "Linear combinations are the bridge to gcd, Bézout identities, and the Euclidean Algorithm.",
+    "worked": "If 7|14 and 7|21, then 7|(14·2+21·1)=49.",
+    "mistake": "The linear-combination theorem requires a to divide both b and c first.",
+    "memory": "Common divisor survives integer combinations.",
+    "quiz": [
+      {
+        "q": "If a|b and b|c, then:",
+        "o": [
+          "a|c",
+          "c|a",
+          "a=c",
+          "b=1"
+        ],
+        "a": 0,
+        "why": "Divisibility is transitive."
+      },
+      {
+        "q": "If a|b and a|c, then a divides:",
+        "o": [
+          "bx+cy for all x,y∈ℤ",
+          "b/c only",
+          "x+y only when x=y",
+          "Nothing else"
+        ],
+        "a": 0,
+        "why": "This is the integer linear-combination property."
+      },
+      {
+        "q": "If a|b, then which is also true?",
+        "o": [
+          "−a|b",
+          "a∤−b",
+          "Only a>0 works",
+          "b|a always"
+        ],
+        "a": 0,
+        "why": "Theorem 1 establishes the equivalent sign forms."
+      },
+      {
+        "q": "If a|1, then a must be:",
+        "o": [
+          "±1",
+          "Any prime",
+          "0",
+          "Even"
+        ],
+        "a": 0,
+        "why": "Theorem 2 states a|1 iff a=±1."
+      }
+    ]
+  },
+  {
+    "id": "parity",
+    "title": "8. Even & Odd Integers",
+    "zh": "奇数与偶数",
+    "group": "Parity",
+    "pages": "7–8",
+    "deps": [
+      "division"
+    ],
+    "summary": "Division by 2 leaves remainder 0 or 1, partitioning the integers into even numbers 2k and odd numbers 2k+1.",
+    "key": [
+      "Even ⇔ divisible by 2",
+      "Odd ⇔ not divisible by 2",
+      "Even form: 2k",
+      "Odd form: 2k+1",
+      "0 is even"
+    ],
+    "intuition": "Parity is just the remainder after division by 2.",
+    "why": "Writing numbers as 2k or 2k+1 is one of the simplest and most reusable proof techniques in discrete mathematics.",
+    "worked": "−4=2(−2) is even; −3=2(−2)+1 is odd.",
+    "mistake": "Negative integers still have parity, and 0 is even.",
+    "memory": "Parity = remainder mod 2: 0 even, 1 odd.",
+    "quiz": [
+      {
+        "q": "An even integer can be written as:",
+        "o": [
+          "2k",
+          "2k+1",
+          "k/2 only",
+          "2k−1 only"
+        ],
+        "a": 0,
+        "why": "The PDF uses 2k."
+      },
+      {
+        "q": "An odd integer can be written as:",
+        "o": [
+          "2k",
+          "2k+1",
+          "4k",
+          "k²"
+        ],
+        "a": 1,
+        "why": "The PDF uses 2g+1."
+      },
+      {
+        "q": "What is the parity of 0?",
+        "o": [
+          "Even",
+          "Odd",
+          "Neither",
+          "Both"
+        ],
+        "a": 0,
+        "why": "0=2·0."
+      },
+      {
+        "q": "Even and odd integers form:",
+        "o": [
+          "A partition of ℤ",
+          "The same set",
+          "Only positive integers",
+          "A partition of ℝ"
+        ],
+        "a": 0,
+        "why": "Every integer is exactly one of the two."
+      }
+    ]
+  },
+  {
+    "id": "parityproof",
+    "title": "9. Parity Algebra & Proof Patterns",
+    "zh": "奇偶运算与证明模板",
+    "group": "Parity",
+    "pages": "7–9",
+    "deps": [
+      "parity",
+      "divprops"
+    ],
+    "summary": "The PDF proves the parity of sums and products by substituting a=2k or 2k+1 and factoring the result back into even or odd form.",
+    "key": [
+      "even+even=even",
+      "odd+odd=even",
+      "even+odd=odd",
+      "even × any integer = even",
+      "odd×odd=odd"
+    ],
+    "intuition": "Parity proofs are algebraic normal-form proofs: substitute 2k or 2k+1 and simplify until the answer visibly has the same form.",
+    "why": "This is a model for direct proof in CSE-style discrete math questions.",
+    "worked": "(2k+1)(2g+1)=2(2kg+k+g)+1, so the product of two odd integers is odd.",
+    "mistake": "Do not prove only with examples such as 3·5=15. A proof must handle arbitrary integers k,g.",
+    "memory": "Substitute parity form → factor out 2 → classify.",
+    "quiz": [
+      {
+        "q": "odd + odd is:",
+        "o": [
+          "Even",
+          "Odd",
+          "Depends"
+        ],
+        "a": 0,
+        "why": "(2k+1)+(2g+1)=2(k+g+1)."
+      },
+      {
+        "q": "odd × odd is:",
+        "o": [
+          "Odd",
+          "Even",
+          "Always prime"
+        ],
+        "a": 0,
+        "why": "The product simplifies to 2(integer)+1."
+      },
+      {
+        "q": "even + odd is:",
+        "o": [
+          "Odd",
+          "Even",
+          "0"
+        ],
+        "a": 0,
+        "why": "2k+(2g+1)=2(k+g)+1."
+      },
+      {
+        "q": "A direct parity proof should begin by:",
+        "o": [
+          "Writing arbitrary numbers in 2k / 2k+1 form",
+          "Checking one example",
+          "Assuming the conclusion",
+          "Using decimals"
+        ],
+        "a": 0,
+        "why": "That is the proof technique used in the chapter."
+      }
+    ]
+  },
+  {
+    "id": "decimalrep",
+    "title": "10. Decimal Place-Value Representation",
+    "zh": "十进制位值展开",
+    "group": "Divisibility Rules",
+    "pages": "9",
+    "deps": [
+      "division"
+    ],
+    "summary": "A base-10 integer with digits aₙ…a₁a₀ is represented as aₙ10ⁿ+⋯+a₁10+a₀. The divisibility rules are derived by reducing this expansion.",
+    "key": [
+      "Digits satisfy 0≤aᵢ≤9",
+      "a₀ is the units digit",
+      "Powers of 10 control which trailing digits matter",
+      "Digit sums appear because 10≡1 for divisibility by 3 or 9"
+    ],
+    "intuition": "Divisibility rules work because most place-value terms disappear modulo the divisor, leaving only a simple digit pattern.",
+    "why": "This is the structural reason behind the familiar tests for 2,3,4,5,6,7,8,9,10,11,20.",
+    "worked": "5783214=5·10⁶+7·10⁵+8·10⁴+3·10³+2·10²+1·10+4.",
+    "mistake": "A divisibility rule is not magic; it is a compressed consequence of place-value arithmetic.",
+    "memory": "Decimal number = weighted digit sum using powers of 10.",
+    "quiz": [
+      {
+        "q": "In aₙ…a₁a₀, which is the units digit?",
+        "o": [
+          "a₀",
+          "a₁",
+          "aₙ",
+          "10"
+        ],
+        "a": 0,
+        "why": "a₀ multiplies 10⁰."
+      },
+      {
+        "q": "Decimal place values are powers of:",
+        "o": [
+          "10",
+          "2",
+          "3",
+          "n"
+        ],
+        "a": 0,
+        "why": "Base 10 uses powers of 10."
+      },
+      {
+        "q": "Why do trailing-digit rules work?",
+        "o": [
+          "Higher powers become divisible by the tested divisor in certain cases",
+          "Digits are random",
+          "All numbers are prime",
+          "Because of logarithms"
+        ],
+        "a": 0,
+        "why": "The proofs separate divisible high-place terms from the remaining digits."
+      },
+      {
+        "q": "The number 2538 expands as:",
+        "o": [
+          "2·10³+5·10²+3·10+8",
+          "2+5+3+8 only",
+          "2·10+538",
+          "253·10²+8"
+        ],
+        "a": 0,
+        "why": "That is the usual place-value expansion."
+      }
+    ]
+  },
+  {
+    "id": "rule2510",
+    "title": "11. Rules for 2, 5, and 10",
+    "zh": "2、5、10 的整除规则",
+    "group": "Divisibility Rules",
+    "pages": "9–14",
+    "deps": [
+      "decimalrep"
+    ],
+    "summary": "The PDF proves: divisibility by 2 depends on the last digit being even; by 5 on the last digit being 0 or 5; by 10 on the last digit being 0.",
+    "key": [
+      "2: last digit even",
+      "5: last digit 0 or 5",
+      "10: last digit 0",
+      "These follow from powers of 10 being divisible by the relevant divisor"
+    ],
+    "intuition": "For these divisors, every higher decimal place is already a multiple of the divisor, so the units digit decides everything.",
+    "why": "These tests are fast building blocks for combined tests such as 6 and 20.",
+    "worked": "3432432 is divisible by 2; 431235 is divisible by 5; a multiple of 10 must end in 0.",
+    "mistake": "Ending in 5 is enough for divisibility by 5, but not for divisibility by 10.",
+    "memory": "2 → even last digit; 5 → 0/5; 10 → 0.",
+    "quiz": [
+      {
+        "q": "Which last digit guarantees divisibility by 5?",
+        "o": [
+          "5",
+          "2",
+          "7",
+          "9"
+        ],
+        "a": 0,
+        "why": "A number divisible by 5 ends in 0 or 5."
+      },
+      {
+        "q": "Which number is divisible by 10?",
+        "o": [
+          "1230",
+          "1235",
+          "1234",
+          "1232"
+        ],
+        "a": 0,
+        "why": "A multiple of 10 ends in 0."
+      },
+      {
+        "q": "37 is not divisible by 2 because:",
+        "o": [
+          "Its last digit is odd",
+          "3+7 is not 2",
+          "37 is prime only",
+          "It has two digits"
+        ],
+        "a": 0,
+        "why": "The last digit 7 is not even."
+      },
+      {
+        "q": "The rule for divisibility by 2 depends on:",
+        "o": [
+          "The units digit",
+          "The digit sum",
+          "The last two digits",
+          "Alternating sum"
+        ],
+        "a": 0,
+        "why": "That is Proposition 1."
+      }
+    ]
+  },
+  {
+    "id": "rule39",
+    "title": "12. Rules for 3 and 9",
+    "zh": "3 与 9 的整除规则",
+    "group": "Divisibility Rules",
+    "pages": "10,13",
+    "deps": [
+      "decimalrep"
+    ],
+    "summary": "A decimal integer is divisible by 3 (respectively 9) exactly when the sum of its digits is divisible by 3 (respectively 9).",
+    "key": [
+      "3: digit sum divisible by 3",
+      "9: digit sum divisible by 9",
+      "May repeat digit-summing for convenience",
+      "Based on 10ᵏ−1 being divisible by 9"
+    ],
+    "intuition": "Modulo 3 or 9, every power of 10 behaves like 1, so the whole number behaves like the sum of its digits.",
+    "why": "Digit-sum tests are among the most useful hand calculations in prime testing and divisibility problems.",
+    "worked": "The PDF sums the digits of 543534895734894 to 81, then 9, proving divisibility by 3.",
+    "mistake": "A digit sum of 12 proves divisibility by 3, not by 9.",
+    "memory": "For 3/9, collapse the number to its digit sum.",
+    "quiz": [
+      {
+        "q": "A number is divisible by 3 iff:",
+        "o": [
+          "Its digit sum is divisible by 3",
+          "It ends in 3",
+          "Its last two digits divide by 3",
+          "It is odd"
+        ],
+        "a": 0,
+        "why": "That is Proposition 2."
+      },
+      {
+        "q": "A digit sum of 27 implies the original number is divisible by:",
+        "o": [
+          "Both 3 and 9",
+          "Only 2",
+          "Only 5",
+          "Neither 3 nor 9"
+        ],
+        "a": 0,
+        "why": "27 is divisible by both."
+      },
+      {
+        "q": "9999 has digit sum:",
+        "o": [
+          "36",
+          "27",
+          "18",
+          "9"
+        ],
+        "a": 0,
+        "why": "9+9+9+9=36."
+      },
+      {
+        "q": "Why does the digit-sum rule work for 9?",
+        "o": [
+          "10≡1 (mod 9) in effect",
+          "10 is prime",
+          "Every digit is 9",
+          "9 divides every number"
+        ],
+        "a": 0,
+        "why": "The proof uses that 10ᵏ−1 is divisible by 9."
+      }
+    ]
+  },
+  {
+    "id": "rule48",
+    "title": "13. Rules for 4 and 8",
+    "zh": "4 与 8 的整除规则",
+    "group": "Divisibility Rules",
+    "pages": "10–13",
+    "deps": [
+      "decimalrep"
+    ],
+    "summary": "Divisibility by 4 depends on the last two decimal digits; divisibility by 8 depends on the last three digits.",
+    "key": [
+      "4: last two digits form a multiple of 4",
+      "8: last three digits form a multiple of 8",
+      "10² divisible by 4",
+      "10³ divisible by 8"
+    ],
+    "intuition": "Once you move far enough left, every remaining place value is automatically divisible by 4 or 8.",
+    "why": "These rules are easy to implement and useful in larger combined divisibility checks.",
+    "worked": "2544 is divisible by 4 because 44 is divisible by 4.",
+    "mistake": "For divisibility by 8, checking only the last two digits is insufficient.",
+    "memory": "4 looks at 2 digits; 8 looks at 3 digits.",
+    "quiz": [
+      {
+        "q": "To test divisibility by 4, inspect the:",
+        "o": [
+          "Last two digits",
+          "Last digit only",
+          "Digit sum",
+          "Alternating sum"
+        ],
+        "a": 0,
+        "why": "Proposition 3 uses the last two digits."
+      },
+      {
+        "q": "To test divisibility by 8, inspect the:",
+        "o": [
+          "Last three digits",
+          "Last digit",
+          "First three digits",
+          "Digit sum"
+        ],
+        "a": 0,
+        "why": "Proposition 6 uses the last three digits."
+      },
+      {
+        "q": "Is 2544 divisible by 4?",
+        "o": [
+          "Yes",
+          "No"
+        ],
+        "a": 0,
+        "why": "44 is divisible by 4."
+      },
+      {
+        "q": "The structural reason the 8-rule works is that:",
+        "o": [
+          "1000 is divisible by 8",
+          "10 is prime",
+          "8 divides every digit",
+          "Only even numbers have three digits"
+        ],
+        "a": 0,
+        "why": "All higher place-value terms contain a factor of 1000."
+      }
+    ]
+  },
+  {
+    "id": "rule620",
+    "title": "14. Combined Rules for 6 and 20",
+    "zh": "6 与 20 的组合整除规则",
+    "group": "Divisibility Rules",
+    "pages": "10,14",
+    "deps": [
+      "rule2510",
+      "rule39",
+      "rule48"
+    ],
+    "summary": "The PDF combines simpler tests: divisible by 6 iff divisible by both 2 and 3; divisible by 20 iff the last two digits are 00,20,40,60,or80.",
+    "key": [
+      "6 requires divisibility by 2 and 3",
+      "20 combines divisibility by 4 and 5",
+      "For 20, last digit must be 0 and last two digits divisible by 4"
+    ],
+    "intuition": "Composite divisors can often be tested by combining coprime factor tests.",
+    "why": "This demonstrates how previously proved rules can be reused instead of reproved from scratch.",
+    "worked": "A number divisible by 6 must have an even last digit and a digit sum divisible by 3.",
+    "mistake": "Divisible by 2 alone or 3 alone does not imply divisible by 6.",
+    "memory": "6=2·3; 20=4·5—combine both factor conditions.",
+    "quiz": [
+      {
+        "q": "A number is divisible by 6 iff it is divisible by:",
+        "o": [
+          "2 and 3",
+          "2 or 3",
+          "3 and 5",
+          "4 and 6"
+        ],
+        "a": 0,
+        "why": "Corollary 1 combines the 2 and 3 tests."
+      },
+      {
+        "q": "Which ending is compatible with divisibility by 20?",
+        "o": [
+          "60",
+          "50",
+          "30",
+          "10"
+        ],
+        "a": 0,
+        "why": "The PDF lists 00,20,40,60,80."
+      },
+      {
+        "q": "A number ending in 4 with digit sum 12 is divisible by 6.",
+        "o": [
+          "True",
+          "False"
+        ],
+        "a": 0,
+        "why": "4 is even and 12 is divisible by 3."
+      },
+      {
+        "q": "The 20-rule is built from rules for:",
+        "o": [
+          "4 and 5",
+          "2 and 10 only",
+          "3 and 7",
+          "8 and 9"
+        ],
+        "a": 0,
+        "why": "The proof combines divisibility by 4 and 5."
+      }
+    ]
+  },
+  {
+    "id": "rule7",
+    "title": "15. Divisibility by 7",
+    "zh": "7 的整除规则",
+    "group": "Divisibility Rules",
+    "pages": "12–13",
+    "deps": [
+      "decimalrep"
+    ],
+    "summary": "For a decimal integer written 10a+b, the PDF gives equivalent recursive tests: 10a+b is divisible by 7 iff a+5b is divisible by 7; equivalently, a−2b may be used.",
+    "key": [
+      "Split n=10a+b",
+      "Test a+5b",
+      "Equivalent shortcut: a−2b",
+      "Repeat until the result is easy to classify"
+    ],
+    "intuition": "Peel off the last digit and replace the original number by a much smaller equivalent test value.",
+    "why": "Unlike the simple trailing-digit or digit-sum rules, this shows how an iterative divisibility reduction works.",
+    "worked": "679→67+5·9=112→11+5·2=21, so 679 is divisible by 7.",
+    "mistake": "The operation is applied to the last digit and the remaining prefix, not to arbitrary digit groups.",
+    "memory": "For 7: prefix − 2×last digit (or prefix + 5×last).",
+    "quiz": [
+      {
+        "q": "Using the alternate rule, 791 becomes:",
+        "o": [
+          "79−2·1=77",
+          "79+1=80",
+          "7+9+1=17",
+          "91−14=77"
+        ],
+        "a": 0,
+        "why": "The PDF uses a−2b."
+      },
+      {
+        "q": "679 is shown divisible by 7 because it reduces to:",
+        "o": [
+          "21",
+          "20",
+          "14 only in one step",
+          "9"
+        ],
+        "a": 0,
+        "why": "679→112→21."
+      },
+      {
+        "q": "For n=10a+b, one PDF test is:",
+        "o": [
+          "a+5b",
+          "a+b",
+          "10a−b only",
+          "ab"
+        ],
+        "a": 0,
+        "why": "Proposition 5 states a+5b."
+      },
+      {
+        "q": "The divisibility-by-7 rule can be applied:",
+        "o": [
+          "Repeatedly",
+          "Only once",
+          "Only to 2-digit numbers",
+          "Only to primes"
+        ],
+        "a": 0,
+        "why": "The examples repeatedly reduce the number."
+      }
+    ]
+  },
+  {
+    "id": "rule11",
+    "title": "16. Divisibility by 11",
+    "zh": "11 的整除规则",
+    "group": "Divisibility Rules",
+    "pages": "14",
+    "deps": [
+      "decimalrep"
+    ],
+    "summary": "A decimal integer is divisible by 11 exactly when its alternating signed digit sum is divisible by 11.",
+    "key": [
+      "Alternate + and − across digits",
+      "Result may be 0, ±11, ±22, …",
+      "Derived from 10≡−1 relative to 11"
+    ],
+    "intuition": "Powers of 10 alternate between behaving like +1 and −1, so the number collapses into an alternating sum.",
+    "why": "This is an important example of a digit test whose signs alternate rather than simply sum.",
+    "worked": "For a run of 1s, the PDF notes that an even number of 1s gives alternating sum 0 and hence divisibility by 11.",
+    "mistake": "Do not use an ordinary digit sum for 11; the signs must alternate.",
+    "memory": "11 → alternating digit sum.",
+    "quiz": [
+      {
+        "q": "The divisibility test for 11 uses:",
+        "o": [
+          "Alternating signed digit sum",
+          "Last digit only",
+          "Last three digits",
+          "Ordinary digit sum only"
+        ],
+        "a": 0,
+        "why": "That is Proposition 8."
+      },
+      {
+        "q": "1111 is divisible by 11 because its alternating sum is:",
+        "o": [
+          "0",
+          "4",
+          "11",
+          "2"
+        ],
+        "a": 0,
+        "why": "1−1+1−1=0."
+      },
+      {
+        "q": "If the alternating sum is 22, the original number is:",
+        "o": [
+          "Divisible by 11",
+          "Not divisible by 11",
+          "Necessarily prime",
+          "Necessarily even"
+        ],
+        "a": 0,
+        "why": "22 is divisible by 11."
+      },
+      {
+        "q": "The rule is related to powers of 10 behaving like:",
+        "o": [
+          "+1 and −1 alternately",
+          "Only 0",
+          "Only 10",
+          "Prime numbers"
+        ],
+        "a": 0,
+        "why": "The proof expands powers of (11−1)."
+      }
+    ]
+  },
+  {
+    "id": "baserep",
+    "title": "17. Representation in Base b",
+    "zh": "任意进制表示",
+    "group": "Bases",
+    "pages": "15–16",
+    "deps": [
+      "division"
+    ],
+    "summary": "For b>1, every positive integer has a unique base-b representation n=a₀+a₁b+⋯+aₜbᵗ with digits 0≤aᵢ<b and leading digit aₜ≠0.",
+    "key": [
+      "Base b uses digits 0,…,b−1",
+      "Representation is unique",
+      "Base 2 uses 0/1",
+      "Base 16 uses 0–9 and A–F in the PDF"
+    ],
+    "intuition": "A base is just a choice of place-value unit: powers of b replace powers of 10.",
+    "why": "Binary and hexadecimal are especially important in computer systems; the same division logic works for any base.",
+    "worked": "42231₅=4·5⁴+2·5³+2·5²+3·5+1=2816.",
+    "mistake": "A digit must be strictly smaller than the base. Source note (PDF p.16): the printed total 2817 in this example is an arithmetic typo; its displayed expansion sums to 2816.",
+    "memory": "Base b = digits 0…b−1 weighted by powers of b.",
+    "quiz": [
+      {
+        "q": "Which digits are valid in base 2?",
+        "o": [
+          "0 and 1",
+          "0,1,2",
+          "1 and 2",
+          "0–9"
+        ],
+        "a": 0,
+        "why": "Base 2 has digits {0,1}."
+      },
+      {
+        "q": "A valid digit in base b must satisfy:",
+        "o": [
+          "0≤digit<b",
+          "digit≤b",
+          "digit>b",
+          "digit<0"
+        ],
+        "a": 0,
+        "why": "That is the theorem's digit condition."
+      },
+      {
+        "q": "Base-16 digits beyond 9 are represented by:",
+        "o": [
+          "A–F",
+          "G–L",
+          "Roman numerals",
+          "No symbols"
+        ],
+        "a": 0,
+        "why": "The PDF uses A through F."
+      },
+      {
+        "q": "The base-b representation is:",
+        "o": [
+          "Unique",
+          "Never unique",
+          "Unique only for b=10",
+          "Unique only for primes b"
+        ],
+        "a": 0,
+        "why": "Theorem 4 states uniqueness."
+      }
+    ]
+  },
+  {
+    "id": "basetodec",
+    "title": "18. Base b → Base 10",
+    "zh": "任意进制转十进制",
+    "group": "Bases",
+    "pages": "17",
+    "deps": [
+      "baserep"
+    ],
+    "summary": "Convert a base-b numeral to decimal by multiplying each digit by its power of b and summing.",
+    "key": [
+      "Rightmost digit multiplies b⁰",
+      "Next digit multiplies b¹",
+      "Continue leftward",
+      "Hex digits A–F represent 10–15"
+    ],
+    "intuition": "Read the numeral as a polynomial evaluated at b.",
+    "why": "This gives a universal interpretation method for binary, ternary, hexadecimal, and other representations.",
+    "worked": "010110₂=0·2⁵+1·2⁴+0·2³+1·2²+1·2+0=22.",
+    "mistake": "Do not treat a base-b numeral as an ordinary decimal string.",
+    "memory": "Digit × place value, then sum.",
+    "quiz": [
+      {
+        "q": "1011₂ equals decimal:",
+        "o": [
+          "11",
+          "9",
+          "10",
+          "13"
+        ],
+        "a": 0,
+        "why": "8+2+1=11."
+      },
+      {
+        "q": "In base b, the rightmost digit has weight:",
+        "o": [
+          "b⁰",
+          "b¹",
+          "b²",
+          "10"
+        ],
+        "a": 0,
+        "why": "It is the units place."
+      },
+      {
+        "q": "B in hexadecimal represents:",
+        "o": [
+          "11",
+          "10",
+          "12",
+          "16"
+        ],
+        "a": 0,
+        "why": "The PDF uses A=10,B=11,C=12,…"
+      },
+      {
+        "q": "321₄ equals:",
+        "o": [
+          "57",
+          "49",
+          "45",
+          "61"
+        ],
+        "a": 0,
+        "why": "3·16+2·4+1=57."
+      }
+    ]
+  },
+  {
+    "id": "dectobase",
+    "title": "19. Base 10 → Base b",
+    "zh": "十进制转任意进制",
+    "group": "Bases",
+    "pages": "17–19",
+    "deps": [
+      "baserep",
+      "division"
+    ],
+    "summary": "Repeatedly divide by b. The successive remainders become the base-b digits from right to left until the quotient becomes 0.",
+    "key": [
+      "Divide n by b",
+      "Record remainder",
+      "Replace n by quotient",
+      "Repeat",
+      "Read remainders in reverse order"
+    ],
+    "intuition": "Each remainder peels off the least-significant base-b digit.",
+    "why": "This is the algorithmic bridge from the Division Algorithm to data representation.",
+    "worked": "86÷7=12 r2; 12÷7=1 r5; 1÷7=0 r1, so 86=152₇.",
+    "mistake": "The remainders are produced least-significant first, so they must be read in reverse order.",
+    "memory": "Repeated divide; stack remainders backward.",
+    "quiz": [
+      {
+        "q": "The first remainder when converting n to base b becomes the:",
+        "o": [
+          "Rightmost digit",
+          "Leftmost digit",
+          "Base itself",
+          "Sign"
+        ],
+        "a": 0,
+        "why": "It is the units digit."
+      },
+      {
+        "q": "86 in base 7 is:",
+        "o": [
+          "152₇",
+          "251₇",
+          "125₇",
+          "162₇"
+        ],
+        "a": 0,
+        "why": "The PDF gives 152₇."
+      },
+      {
+        "q": "19 in base 2 is:",
+        "o": [
+          "10011₂",
+          "10101₂",
+          "11001₂",
+          "11100₂"
+        ],
+        "a": 0,
+        "why": "The PDF converts 19 to 10011₂."
+      },
+      {
+        "q": "When do repeated divisions stop?",
+        "o": [
+          "When the quotient becomes 0",
+          "When remainder is 0 once",
+          "After two divisions",
+          "When base is prime"
+        ],
+        "a": 0,
+        "why": "The quotient eventually reaches 0."
+      }
+    ]
+  },
+  {
+    "id": "directbase",
+    "title": "20. Direct Related-Base Conversion",
+    "zh": "相关进制直接转换",
+    "group": "Bases",
+    "pages": "19–20",
+    "deps": [
+      "basetodec",
+      "dectobase"
+    ],
+    "summary": "When one base is a power of another, digit grouping can convert directly. The PDF groups binary bits in blocks of 4 for hexadecimal and ternary digits in blocks of 2 for base 9.",
+    "key": [
+      "2⁴=16 → group binary in 4s",
+      "3²=9 → group ternary in 2s",
+      "Pad the leftmost group with zeros if needed",
+      "Each block becomes one digit in the larger base"
+    ],
+    "intuition": "Instead of traveling through decimal, bundle small-base digits into chunks that exactly match one large-base digit.",
+    "why": "This is the same principle used constantly in computer work when moving between binary and hex.",
+    "worked": "0001 1010 1101₂ becomes 1 A D₁₆.",
+    "mistake": "Group from the right (least significant side), not arbitrarily from the left.",
+    "memory": "Power-related bases → group digits by the exponent.",
+    "quiz": [
+      {
+        "q": "Binary to hexadecimal groups bits in blocks of:",
+        "o": [
+          "4",
+          "2",
+          "3",
+          "8"
+        ],
+        "a": 0,
+        "why": "Because 2⁴=16."
+      },
+      {
+        "q": "If the leftmost group is short, you may:",
+        "o": [
+          "Pad it with leading zeros",
+          "Add trailing ones",
+          "Change the base",
+          "Drop it"
+        ],
+        "a": 0,
+        "why": "The PDF pads with zeros."
+      },
+      {
+        "q": "1010₂ corresponds to hex:",
+        "o": [
+          "A",
+          "B",
+          "9",
+          "F"
+        ],
+        "a": 0,
+        "why": "1010₂=10 decimal=A₁₆."
+      },
+      {
+        "q": "Base 3 to base 9 can group digits in:",
+        "o": [
+          "Pairs",
+          "Triples",
+          "Groups of 4",
+          "No direct grouping"
+        ],
+        "a": 0,
+        "why": "Because 3²=9."
+      }
+    ]
+  },
+  {
+    "id": "prime",
+    "title": "21. Prime & Composite Numbers",
+    "zh": "质数与合数",
+    "group": "Primes",
+    "pages": "20–21",
+    "deps": [
+      "divisibility"
+    ],
+    "summary": "An integer p>1 is prime if its only divisors are ±1 and ±p. An integer greater than 1 that is not prime is composite. The PDF emphasizes that 1 is neither.",
+    "key": [
+      "Prime means p>1",
+      "Only divisors ±1,±p",
+      "2 is the only even prime",
+      "1 is neither prime nor composite"
+    ],
+    "intuition": "A prime is an integer that cannot be factored nontrivially into smaller positive factors.",
+    "why": "Prime structure drives factorization, gcd reasoning, cryptography, and primality algorithms.",
+    "worked": "13 is prime; 14 is composite because 14=2·7.",
+    "mistake": "Do not classify 1 as prime.",
+    "memory": "Prime >1 with no nontrivial positive divisor.",
+    "quiz": [
+      {
+        "q": "Which number is prime?",
+        "o": [
+          "13",
+          "14",
+          "15",
+          "21"
+        ],
+        "a": 0,
+        "why": "13 has no nontrivial positive divisor."
+      },
+      {
+        "q": "What is special about 2?",
+        "o": [
+          "It is the only even prime",
+          "It is composite",
+          "It is neither prime nor composite",
+          "It has three positive divisors"
+        ],
+        "a": 0,
+        "why": "The PDF notes this explicitly."
+      },
+      {
+        "q": "How is 1 classified?",
+        "o": [
+          "Neither prime nor composite",
+          "Prime",
+          "Composite",
+          "Even prime"
+        ],
+        "a": 0,
+        "why": "The PDF explicitly excludes 1 from both classes."
+      },
+      {
+        "q": "A composite n>2 can be written n=ab with:",
+        "o": [
+          "1<a<n and 1<b<n",
+          "a=1 only",
+          "a=n only",
+          "a,b nonintegers"
+        ],
+        "a": 0,
+        "why": "Theorem 5 states this characterization."
+      }
+    ]
+  },
+  {
+    "id": "primelemma",
+    "title": "22. Prime Divisor Lemma",
+    "zh": "质数整除乘积引理",
+    "group": "Primes",
+    "pages": "21",
+    "deps": [
+      "prime",
+      "gcd"
+    ],
+    "summary": "If p is prime and p|ab, then p|a or p|b. The PDF extends this to a product of many factors.",
+    "key": [
+      "Requires p prime",
+      "p|ab ⇒ p|a or p|b",
+      "Extends to p|a₁…aₙ ⇒ p divides some factor",
+      "The statement can fail for composite divisors"
+    ],
+    "intuition": "A prime factor cannot appear in a product without coming from at least one factor.",
+    "why": "This lemma is the key cancellation tool in uniqueness of prime factorization.",
+    "worked": "5|30, and in every factorization of 30 one factor carries a factor 5. But 4|20 while 4∤2 and 4∤10.",
+    "mistake": "Do not apply the lemma with a composite 'p'.",
+    "memory": "Prime divides product ⇒ prime enters through a factor.",
+    "quiz": [
+      {
+        "q": "If prime p divides ab, then:",
+        "o": [
+          "p|a or p|b",
+          "p divides neither",
+          "a=b",
+          "p=ab"
+        ],
+        "a": 0,
+        "why": "That is Lemma 2."
+      },
+      {
+        "q": "Why does the analogous statement fail for 4?",
+        "o": [
+          "4|20 but 4∤2 and 4∤10",
+          "4 is prime",
+          "4 never divides products",
+          "20 is prime"
+        ],
+        "a": 0,
+        "why": "The PDF gives this counterexample."
+      },
+      {
+        "q": "The product extension says p|a₁…aₙ implies:",
+        "o": [
+          "p divides at least one aᵢ",
+          "p divides every aᵢ",
+          "all aᵢ are prime",
+          "n=p"
+        ],
+        "a": 0,
+        "why": "Corollary 4 states this."
+      },
+      {
+        "q": "The prime condition matters because:",
+        "o": [
+          "Composite divisors can be split across factors",
+          "Primes are always odd",
+          "Primes have no sign",
+          "Products are finite"
+        ],
+        "a": 0,
+        "why": "A composite's own factors may be distributed between a and b."
+      }
+    ]
+  },
+  {
+    "id": "fta",
+    "title": "23. Fundamental Theorem of Arithmetic",
+    "zh": "算术基本定理",
+    "group": "Primes",
+    "pages": "21–22",
+    "deps": [
+      "prime",
+      "primelemma",
+      "wellorder"
+    ],
+    "summary": "The chapter proves existence and uniqueness of prime factorization. Its later exponent form writes n=p₁^{a₁}…p_s^{a_s} using distinct prime bases and positive exponents.",
+    "key": [
+      "Every integer n≥2 factors into primes",
+      "Prime factorization is unique up to ordering",
+      "Repeated primes are collected as exponents",
+      "The proof uses the prime-divisor lemma for uniqueness"
+    ],
+    "intuition": "Prime numbers are the irreducible building blocks of positive integers.",
+    "why": "GCD, LCM, divisor enumeration, irrationality arguments, and many algorithms can be read directly from prime exponents.",
+    "worked": "The PDF gives 4320=2⁵·3³·5.",
+    "mistake": "Source note: the theorem statement says 'distinct primes,' while the proof immediately allows repeated prime factors and then rewrites them using exponents. This page uses the exponent form that follows in the PDF.",
+    "memory": "Integers factor uniquely into prime powers.",
+    "quiz": [
+      {
+        "q": "The Fundamental Theorem of Arithmetic gives:",
+        "o": [
+          "Existence and uniqueness of prime factorization",
+          "Only existence of even numbers",
+          "A base-conversion rule",
+          "A floor identity"
+        ],
+        "a": 0,
+        "why": "That is the chapter's central factorization theorem."
+      },
+      {
+        "q": "4320 is factored in the PDF as:",
+        "o": [
+          "2⁵·3³·5",
+          "2⁴·3³·5",
+          "2⁵·3²·5",
+          "2·3·5"
+        ],
+        "a": 0,
+        "why": "This is Example 34."
+      },
+      {
+        "q": "Repeated copies of the same prime are usually written using:",
+        "o": [
+          "Exponents",
+          "Decimals",
+          "Ceilings",
+          "Remainders only"
+        ],
+        "a": 0,
+        "why": "The PDF follows with n=p₁^{a₁}…p_s^{a_s}."
+      },
+      {
+        "q": "Which lemma supports uniqueness?",
+        "o": [
+          "Prime divisor lemma",
+          "Vertical line test",
+          "Pigeonhole principle only",
+          "Factorial rule"
+        ],
+        "a": 0,
+        "why": "The proof repeatedly uses that a prime dividing a product divides a prime factor."
+      }
+    ]
+  },
+  {
+    "id": "factordiv",
+    "title": "24. Prime Factorization & Divisor Generation",
+    "zh": "质因数分解与约数生成",
+    "group": "Primes",
+    "pages": "22–23",
+    "deps": [
+      "fta"
+    ],
+    "summary": "If n=p₁^{a₁}…p_s^{a_s}, every positive divisor has the form p₁^{b₁}…p_s^{b_s} with 0≤bᵢ≤aᵢ.",
+    "key": [
+      "Divisor exponents choose independently",
+      "Each bᵢ ranges from 0 to aᵢ",
+      "Prime factorization makes divisor enumeration systematic"
+    ],
+    "intuition": "To build a divisor, decide how many copies of each available prime factor to keep.",
+    "why": "This is the computational basis for listing divisors and deriving gcd/lcm exponent rules.",
+    "worked": "If n=2⁵·3⁴·7²·11, then 2³·3²·7·11 is one divisor.",
+    "mistake": "A divisor cannot use a prime exponent larger than the exponent available in n.",
+    "memory": "Divisor = choose each prime exponent between 0 and the original exponent.",
+    "quiz": [
+      {
+        "q": "If n contains p^5, a divisor may contain p to exponent:",
+        "o": [
+          "0 through 5",
+          "Only 5",
+          "6 or more",
+          "Negative only"
+        ],
+        "a": 0,
+        "why": "Corollary 5 allows 0≤b≤a."
+      },
+      {
+        "q": "If n=2³·3², which is a divisor?",
+        "o": [
+          "2²·3",
+          "2⁴",
+          "5",
+          "2³·3³"
+        ],
+        "a": 0,
+        "why": "Its exponents stay within the available bounds."
+      },
+      {
+        "q": "Prime factorization helps list divisors by:",
+        "o": [
+          "Choosing allowed exponents",
+          "Adding random primes",
+          "Using only decimal digits",
+          "Taking square roots only"
+        ],
+        "a": 0,
+        "why": "That is the corollary's structure."
+      },
+      {
+        "q": "A divisor may introduce a prime not appearing in n.",
+        "o": [
+          "False",
+          "True"
+        ],
+        "a": 0,
+        "why": "A positive divisor's primes must come from n's prime factorization."
+      }
+    ]
+  },
+  {
+    "id": "infinite_mersenne",
+    "title": "25. Infinite Primes, Mersenne & Perfect Numbers",
+    "zh": "无穷质数、梅森数与完全数",
+    "group": "Primes",
+    "pages": "23–25",
+    "deps": [
+      "fta",
+      "properperfect"
+    ],
+    "summary": "The PDF presents Euclid's proof that infinitely many primes exist, defines Mersenne numbers Mₙ=2ⁿ−1, and shows that a Mersenne prime 2^p−1 yields the perfect number 2^{p−1}(2^p−1).",
+    "key": [
+      "There are infinitely many primes",
+      "Mₙ=2ⁿ−1",
+      "If 2ⁿ−1 is prime, n must be prime",
+      "Mersenne prime ⇒ associated even perfect number"
+    ],
+    "intuition": "Euclid manufactures a number one more than a product of known primes; Mersenne structure links special primes to perfect numbers.",
+    "why": "This section shows how prime structure creates global existence theorems and special integer families.",
+    "worked": "p=5 gives M₅=31 and 2⁴·31=496, a perfect number.",
+    "mistake": "n prime is necessary but not sufficient for 2ⁿ−1 to be prime.",
+    "memory": "Mersenne: 2^p−1; perfect partner: 2^{p−1}(2^p−1).",
+    "quiz": [
+      {
+        "q": "A Mersenne number has form:",
+        "o": [
+          "2ⁿ−1",
+          "2ⁿ+1",
+          "n²−1",
+          "n!−1"
+        ],
+        "a": 0,
+        "why": "That is the definition."
+      },
+      {
+        "q": "If 2ⁿ−1 is prime, then n must be:",
+        "o": [
+          "Prime",
+          "Even",
+          "Composite",
+          "0"
+        ],
+        "a": 0,
+        "why": "Theorem 10 gives the contrapositive statement."
+      },
+      {
+        "q": "Which perfect number comes from p=5?",
+        "o": [
+          "496",
+          "28",
+          "8128 only",
+          "31"
+        ],
+        "a": 0,
+        "why": "2⁴(31)=496."
+      },
+      {
+        "q": "Euclid's infinitude proof considers a number like:",
+        "o": [
+          "p₁p₂…pₙ+1",
+          "p₁+p₂+…+pₙ",
+          "p₁! only",
+          "2p"
+        ],
+        "a": 0,
+        "why": "The proof adds 1 to the product of all assumed primes."
+      }
+    ]
+  },
+  {
+    "id": "gcd",
+    "title": "26. Common Divisors, GCD & Coprime",
+    "zh": "公因数、最大公因数与互质",
+    "group": "GCD / LCM",
+    "pages": "25–26",
+    "deps": [
+      "divisibility"
+    ],
+    "summary": "For integers a,b not both zero, the gcd is the greatest positive common divisor. Every common divisor divides it. Integers are relatively prime (coprime) when their gcd is 1.",
+    "key": [
+      "gcd(a,b)>0 when a and b are not both zero",
+      "gcd divides each input",
+      "Every common divisor divides the gcd",
+      "Coprime ⇔ gcd=1"
+    ],
+    "intuition": "Look for the largest positive integer that divides both numbers. A later factorization method describes the same shared structure using prime powers.",
+    "why": "The gcd controls Bézout identities, Euclidean algorithms, modular inverses, and lcm formulas.",
+    "worked": "gcd(28,42)=14. The PDF also gives gcd(9,16)=1.",
+    "mistake": "a∤b does not by itself imply gcd(a,b)=1; for example 4∤10 but gcd(4,10)=2. Calculator convention: gcd(0,0)=0 is an extension beyond the positive-divisor definition.",
+    "memory": "gcd = greatest shared divisor; coprime = gcd 1.",
+    "quiz": [
+      {
+        "q": "gcd(28,42) is:",
+        "o": [
+          "14",
+          "7",
+          "84",
+          "2"
+        ],
+        "a": 0,
+        "why": "The PDF gives 14."
+      },
+      {
+        "q": "Relatively prime means:",
+        "o": [
+          "gcd=1",
+          "Both numbers are prime",
+          "No divisors at all",
+          "Both numbers are odd"
+        ],
+        "a": 0,
+        "why": "That is the definition."
+      },
+      {
+        "q": "Which pair is coprime in the PDF?",
+        "o": [
+          "9 and 16",
+          "4 and 10",
+          "28 and 42",
+          "15 and 20"
+        ],
+        "a": 0,
+        "why": "gcd(9,16)=1."
+      },
+      {
+        "q": "If a∤b, must gcd(a,b)=1?",
+        "o": [
+          "No",
+          "Yes"
+        ],
+        "a": 0,
+        "why": "The PDF gives 4 and 10 as a counterexample."
+      }
+    ]
+  },
+  {
+    "id": "bezout",
+    "title": "27. Bézout Linear Combination",
+    "zh": "贝祖线性组合",
+    "group": "GCD / LCM",
+    "pages": "26",
+    "deps": [
+      "gcd",
+      "divprops",
+      "wellorder"
+    ],
+    "summary": "The PDF proves that for nonzero integers a,b, there exist x,y∈ℤ such that gcd(a,b)=ax+by.",
+    "key": [
+      "gcd(a,b)=ax+by for some integers x,y",
+      "The gcd is the smallest positive integer representable as ax+by in the proof",
+      "Coefficients are generally not unique"
+    ],
+    "intuition": "The gcd can be synthesized from the original two numbers using integer additions and subtractions.",
+    "why": "This is the algebraic foundation for modular inverses and the extended Euclidean Algorithm.",
+    "worked": "45=14·3+3; 14=3·4+2; 3=2·1+1. Back-substitution gives 1=45·5+14·(−16), so 5 is an inverse of 45 modulo 14.",
+    "mistake": "An arbitrary positive linear combination ax+by is not automatically the gcd; the PDF explicitly warns about this. Source note (PDF p.32): the displayed quotient 2 and coefficient −11 are arithmetic typos. The correct quotient is 3 and coefficient is −16.",
+    "memory": "gcd can be built as an integer linear combination.",
+    "quiz": [
+      {
+        "q": "Bézout's form for gcd is:",
+        "o": [
+          "d=ax+by",
+          "d=a+b only",
+          "d=ab",
+          "d=a/b"
+        ],
+        "a": 0,
+        "why": "Theorem 12 states this form."
+      },
+      {
+        "q": "If ax+by=1, what can you conclude?",
+        "o": [
+          "gcd(a,b)=1",
+          "a=b",
+          "Both are prime",
+          "a|b"
+        ],
+        "a": 0,
+        "why": "1 is the smallest positive possible gcd."
+      },
+      {
+        "q": "Are Bézout coefficients x,y unique?",
+        "o": [
+          "No",
+          "Yes"
+        ],
+        "a": 0,
+        "why": "The later Euclidean examples note nonuniqueness."
+      },
+      {
+        "q": "Why is an arbitrary equation ax+by=4 not enough to claim gcd=4?",
+        "o": [
+          "4 may not even be a common divisor or the smallest positive combination",
+          "4 is never a gcd",
+          "Linear combinations do not matter",
+          "Because x,y must be positive"
+        ],
+        "a": 0,
+        "why": "The PDF gives 3·5+11·(−1)=4 as a warning."
+      }
+    ]
+  },
+  {
+    "id": "lcm",
+    "title": "28. LCM & Prime-Exponent Rules",
+    "zh": "最小公倍数与指数规则",
+    "group": "GCD / LCM",
+    "pages": "27–28",
+    "deps": [
+      "gcd",
+      "factordiv"
+    ],
+    "summary": "Prime factorization gives gcd by taking the minimum exponent of each prime and lcm by taking the maximum. For nonzero signed integers, lcm(a,b)=|ab|/gcd(a,b).",
+    "key": [
+      "gcd uses min exponents",
+      "lcm uses max exponents",
+      "For two nonzero signed integers: gcd(a,b)·lcm(a,b)=|ab|",
+      "The simple product formula is not stated as general for more than two integers"
+    ],
+    "intuition": "Shared structure uses the smaller exponent; a common multiple must contain enough of every prime, so it uses the larger exponent.",
+    "why": "This turns gcd/lcm into transparent operations on prime exponents and avoids separate lcm search algorithms.",
+    "worked": "28=2²·7 and 42=2·3·7, so gcd=2·7=14 and lcm=2²·3·7=84.",
+    "mistake": "Do not extend the two-number product formula blindly to three or more integers. The PDF writes ab in a positive-input context; signed inputs require |ab|. This calculator extends lcm(a,0)=0.",
+    "memory": "gcd=min exponents; lcm=max exponents.",
+    "quiz": [
+      {
+        "q": "For gcd, prime exponents are chosen by:",
+        "o": [
+          "Minimum",
+          "Maximum",
+          "Sum",
+          "Product"
+        ],
+        "a": 0,
+        "why": "Theorem 13 uses min."
+      },
+      {
+        "q": "For lcm, prime exponents are chosen by:",
+        "o": [
+          "Maximum",
+          "Minimum",
+          "Difference",
+          "Zero"
+        ],
+        "a": 0,
+        "why": "Theorem 13 uses max."
+      },
+      {
+        "q": "lcm(28,42) is:",
+        "o": [
+          "84",
+          "14",
+          "56",
+          "588"
+        ],
+        "a": 0,
+        "why": "The PDF gives 84."
+      },
+      {
+        "q": "The two-input formula lcm(a,b)=|ab|/gcd(a,b) applies directly to:",
+        "o": [
+          "Two nonzero integers",
+          "Any number of integers without change",
+          "Only primes",
+          "Only coprime numbers"
+        ],
+        "a": 0,
+        "why": "For two nonzero integers, the absolute product gives the nonnegative lcm. The PDF presents the positive-input case."
+      }
+    ]
+  },
+  {
+    "id": "euclid",
+    "title": "29. Euclidean Algorithm",
+    "zh": "欧几里得算法",
+    "group": "Algorithms",
+    "pages": "29–31",
+    "deps": [
+      "division",
+      "gcd"
+    ],
+    "summary": "Repeated Division Algorithm steps replace (a,b) by (b,r) until the remainder is 0. The last nonzero remainder is gcd(a,b).",
+    "key": [
+      "a=bq₁+r₁",
+      "Then b=r₁q₂+r₂",
+      "Remainders strictly decrease",
+      "Stop at remainder 0",
+      "Previous remainder is the gcd"
+    ],
+    "intuition": "A common divisor of two numbers also divides their remainder, so each division step preserves the gcd while shrinking the problem.",
+    "why": "This is a fast algorithm for gcd even when the inputs are very large.",
+    "worked": "372=42·8+36; 42=36·1+6; 36=6·6+0, so gcd(372,42)=6.",
+    "mistake": "The gcd is the last nonzero remainder, not the final zero.",
+    "memory": "Divide, replace, repeat; last nonzero remainder = gcd.",
+    "quiz": [
+      {
+        "q": "In the Euclidean Algorithm, the gcd is:",
+        "o": [
+          "The last nonzero remainder",
+          "The final 0",
+          "The first quotient",
+          "Always the smaller input"
+        ],
+        "a": 0,
+        "why": "That is the algorithm's result."
+      },
+      {
+        "q": "For 372 and 42, the gcd is:",
+        "o": [
+          "6",
+          "36",
+          "42",
+          "8"
+        ],
+        "a": 0,
+        "why": "The PDF's Example 44 ends at 6."
+      },
+      {
+        "q": "Why does the algorithm terminate?",
+        "o": [
+          "Remainders strictly decrease among nonnegative integers",
+          "Quotients become prime",
+          "Inputs grow",
+          "Because all numbers are even"
+        ],
+        "a": 0,
+        "why": "Each remainder is smaller than the previous divisor."
+      },
+      {
+        "q": "Each Euclidean step is based on the:",
+        "o": [
+          "Division Algorithm",
+          "Factorial definition",
+          "Ceiling function",
+          "Sieve only"
+        ],
+        "a": 0,
+        "why": "The algorithm repeatedly applies division with remainder."
+      }
+    ]
+  },
+  {
+    "id": "extended",
+    "title": "30. Extended Euclidean Algorithm",
+    "zh": "扩展欧几里得算法",
+    "group": "Algorithms",
+    "pages": "29–32",
+    "deps": [
+      "euclid",
+      "bezout"
+    ],
+    "summary": "Back-substituting the Euclidean remainder equations expresses gcd(a,b) as ax+by. The PDF uses this to find inverses modulo an integer.",
+    "key": [
+      "Run Euclid forward for gcd",
+      "Back-substitute remainders",
+      "Obtain Bézout coefficients x,y",
+      "If m>1 and gcd(a,m)=1, the coefficient of a gives a modular inverse modulo m"
+    ],
+    "intuition": "Euclid finds the gcd; running the equations backward tells you exactly how the gcd was assembled from the inputs.",
+    "why": "This algorithm is fundamental in number theory, cryptography, and modular arithmetic.",
+    "worked": "45=14·3+3; 14=3·4+2; 3=2·1+1. Back-substitution gives 1=45·5+14·(−16), so 5 is an inverse of 45 modulo 14.",
+    "mistake": "A modular inverse exists only when the gcd with the modulus is 1. The modulus must be greater than 1 here. Source note (PDF p.32): the displayed quotient 2 and coefficient −11 are arithmetic typos. The correct quotient is 3 and coefficient is −16.",
+    "memory": "Euclid forward, substitute backward, read off coefficients.",
+    "quiz": [
+      {
+        "q": "Extended Euclid computes:",
+        "o": [
+          "gcd and Bézout coefficients",
+          "Only factorials",
+          "Only prime lists",
+          "Floor values"
+        ],
+        "a": 0,
+        "why": "It expresses gcd as ax+by."
+      },
+      {
+        "q": "From 45·5+14·(−16)=1, the inverse of 45 modulo 14 is:",
+        "o": [
+          "5",
+          "−16",
+          "14",
+          "45"
+        ],
+        "a": 0,
+        "why": "Modulo 14, the second term vanishes."
+      },
+      {
+        "q": "A modular inverse of a modulo m requires:",
+        "o": [
+          "gcd(a,m)=1",
+          "a=m",
+          "a even",
+          "m prime always"
+        ],
+        "a": 0,
+        "why": "Bézout must produce 1."
+      },
+      {
+        "q": "Back-substitution is performed:",
+        "o": [
+          "After the forward Euclidean divisions",
+          "Before any division",
+          "Only for base conversion",
+          "Only when gcd>1"
+        ],
+        "a": 0,
+        "why": "The remainder equations are substituted backward."
+      }
+    ]
+  },
+  {
+    "id": "primesearch",
+    "title": "31. Prime Search: √n Test & Sieve",
+    "zh": "质数搜索：平方根判定与筛法",
+    "group": "Algorithms",
+    "pages": "32–35",
+    "deps": [
+      "prime",
+      "rule2510",
+      "rule39",
+      "rule7",
+      "rule11",
+      "euclid"
+    ],
+    "summary": "The PDF states that a composite n has a divisor p≤√n, and presents the Sieve of Eratosthenes for listing all primes up to n by crossing out multiples of successive primes.",
+    "key": [
+      "Composite n has a divisor ≤√n",
+      "To test primality, check prime divisors up to √n",
+      "Sieve starts at 2 and marks multiples",
+      "Stop crossing with p once p>√n"
+    ],
+    "intuition": "Any factorization n=ab has at least one factor no larger than √n, so a search beyond √n would only rediscover paired factors.",
+    "why": "This is the chapter's algorithmic view of prime detection.",
+    "worked": "For primes below 30, the sieve leaves 2,3,5,7,11,13,17,19,23,29.",
+    "mistake": "Testing divisibility only by 2,3,5 is not enough for arbitrary n; the cutoff depends on √n.",
+    "memory": "Prime test: search prime divisors only through √n.",
+    "quiz": [
+      {
+        "q": "If n is composite, it has a divisor no greater than:",
+        "o": [
+          "√n",
+          "n²",
+          "n+1",
+          "log n only"
+        ],
+        "a": 0,
+        "why": "That is Theorem 15."
+      },
+      {
+        "q": "Which algorithm lists primes by crossing out multiples?",
+        "o": [
+          "Sieve of Eratosthenes",
+          "Euclidean Algorithm",
+          "Division Algorithm only",
+          "Floor algorithm"
+        ],
+        "a": 0,
+        "why": "The PDF presents the sieve."
+      },
+      {
+        "q": "To test 131, the PDF checks prime candidates up to:",
+        "o": [
+          "11",
+          "131",
+          "2 only",
+          "50"
+        ],
+        "a": 0,
+        "why": "√131 is a little above 11."
+      },
+      {
+        "q": "For a sieve up to n, when may the crossing prime p stop?",
+        "o": [
+          "Once p>√n",
+          "At p=2",
+          "Only at p=n",
+          "Never"
+        ],
+        "a": 0,
+        "why": "Any remaining composite would already have a smaller factor."
+      }
+    ]
+  },
+  {
+    "id": "factorial",
+    "title": "32. Factorial Function",
+    "zh": "阶乘函数",
+    "group": "Integer Functions",
+    "pages": "36–37",
+    "deps": [
+      "integers"
+    ],
+    "summary": "The chapter defines 0!=1 and recursively (n+1)!=(n+1)n!. It proves that n! counts the number of arrangements of n distinct objects in a row.",
+    "key": [
+      "0!=1",
+      "n!=n(n−1)…2·1 for n>0",
+      "n! counts arrangements of n distinct objects",
+      "Factorial grows extremely quickly"
+    ],
+    "intuition": "To arrange n distinct objects, choose among n for the first position, then n−1, then n−2, and multiply.",
+    "why": "Factorial is central to discrete counting and connects this integer chapter to permutations.",
+    "worked": "5!=120; the chapter emphasizes the enormous size of 52! possible card orders.",
+    "mistake": "0! is defined as 1, not 0.",
+    "memory": "n! = countdown product; 0! = 1.",
+    "quiz": [
+      {
+        "q": "0! equals:",
+        "o": [
+          "1",
+          "0",
+          "Undefined",
+          "−1"
+        ],
+        "a": 0,
+        "why": "The factorial section defines 0!=1."
+      },
+      {
+        "q": "5! equals:",
+        "o": [
+          "120",
+          "25",
+          "24",
+          "720"
+        ],
+        "a": 0,
+        "why": "5·4·3·2·1=120."
+      },
+      {
+        "q": "n! counts:",
+        "o": [
+          "Arrangements of n distinct objects in a row",
+          "Only prime factors of n",
+          "Divisors of n",
+          "Digits of n"
+        ],
+        "a": 0,
+        "why": "There are n choices for the first distinct object, then n−1, and so on: n!."
+      },
+      {
+        "q": "Factorial growth is described as:",
+        "o": [
+          "Very rapid",
+          "Linear",
+          "Constant",
+          "Always below n²"
+        ],
+        "a": 0,
+        "why": "The card-deck example illustrates the huge growth."
+      }
+    ]
+  },
+  {
+    "id": "floorceil",
+    "title": "33. Floor & Ceiling",
+    "zh": "下取整与上取整",
+    "group": "Integer Functions",
+    "pages": "37–38",
+    "deps": [
+      "integers"
+    ],
+    "summary": "The floor ⌊x⌋ is the greatest integer ≤x; the ceiling ⌈x⌉ is the least integer ≥x. The examples emphasize special care with negative values.",
+    "key": [
+      "⌊x⌋ = greatest integer ≤x",
+      "⌈x⌉ = least integer ≥x",
+      "If x is integer, floor=ceiling=x",
+      "Negative decimals move in opposite-looking directions: ⌊−3.6⌋=−4"
+    ],
+    "intuition": "Floor steps left/down to the nearest integer; ceiling steps right/up to the nearest integer.",
+    "why": "These functions appear frequently in algorithms, complexity bounds, indexing, and discrete counting.",
+    "worked": "⌊2.3⌋=2, ⌊−3.6⌋=−4, ⌈3.4⌉=4.",
+    "mistake": "Source note: the PDF's ceiling definition text and one later inequality contain apparent sign/set typos; its heading and examples clearly use 'least integer ≥x,' which is the rule implemented here.",
+    "memory": "Floor ≤ x ≤ Ceiling.",
+    "quiz": [
+      {
+        "q": "⌊−3.6⌋ equals:",
+        "o": [
+          "−4",
+          "−3",
+          "3",
+          "4"
+        ],
+        "a": 0,
+        "why": "The PDF gives −4."
+      },
+      {
+        "q": "⌈3.4⌉ equals:",
+        "o": [
+          "4",
+          "3",
+          "3.4",
+          "5"
+        ],
+        "a": 0,
+        "why": "Ceiling is the least integer ≥3.4."
+      },
+      {
+        "q": "If n is an integer, then:",
+        "o": [
+          "⌊n⌋=⌈n⌉=n",
+          "⌊n⌋=n−1",
+          "⌈n⌉=n+1 always",
+          "Floor is undefined"
+        ],
+        "a": 0,
+        "why": "The theorem states equality at integers."
+      },
+      {
+        "q": "The floor function is:",
+        "o": [
+          "Not additive in general",
+          "Always additive",
+          "Always multiplicative",
+          "Only defined on integers"
+        ],
+        "a": 0,
+        "why": "The PDF gives a counterexample using 0.9 and 0.8."
+      }
+    ]
+  },
+  {
+    "id": "mastery",
+    "title": "34. Integer Number-Theory Classifier",
+    "zh": "整数数论综合实验",
+    "group": "Synthesis",
+    "pages": "1–38",
+    "deps": [
+      "rule11",
+      "directbase",
+      "infinite_mersenne",
+      "lcm",
+      "extended",
+      "primesearch",
+      "factorial",
+      "floorceil"
+    ],
+    "summary": "This synthesis node combines parity, divisibility rules, prime factorization, gcd/lcm, Euclidean reasoning, and base representation into one interactive diagnostic.",
+    "key": [
+      "Classify integer by parity",
+      "Apply divisibility rules",
+      "Factor when possible",
+      "Compute gcd/lcm with a second integer",
+      "Convert among bases",
+      "Use Euclid for certificates"
+    ],
+    "intuition": "The chapter is not a bag of disconnected facts: division with remainder drives almost every later technique.",
+    "why": "Mixed classification forces you to recognize which tool applies before computing, which is closer to actual discrete-math problem solving.",
+    "worked": "For n=84: even; divisible by 2,3,4,6,7; factorization 2²·3·7; many gcd/lcm questions become immediate.",
+    "mistake": "Do not reach for prime factorization when a one-line divisibility rule or Euclidean step answers the question more directly.",
+    "memory": "Start with division/remainders, then choose the right number-theory tool.",
+    "quiz": [
+      {
+        "q": "Which concept sits underneath parity, base conversion, and Euclid?",
+        "o": [
+          "Division with remainder",
+          "Only factorial",
+          "Floor only",
+          "Function composition"
+        ],
+        "a": 0,
+        "why": "All three build directly from the Division Algorithm."
+      },
+      {
+        "q": "Which tool is best for gcd of very large integers?",
+        "o": [
+          "Euclidean Algorithm",
+          "Listing every divisor by hand",
+          "Factorial",
+          "Ceiling"
+        ],
+        "a": 0,
+        "why": "The chapter presents Euclid as efficient."
+      },
+      {
+        "q": "Which representation exposes gcd/lcm through min/max exponents?",
+        "o": [
+          "Prime factorization",
+          "Decimal digits only",
+          "Floor notation",
+          "Truth tables"
+        ],
+        "a": 0,
+        "why": "Theorem 13 uses prime exponents."
+      },
+      {
+        "q": "Which pair of tools together can produce a modular inverse?",
+        "o": [
+          "Euclidean Algorithm + Bézout back-substitution",
+          "Factorial + floor",
+          "Sieve + ceiling",
+          "Base conversion + parity only"
+        ],
+        "a": 0,
+        "why": "Extended Euclid gives coefficients when gcd=1."
+      }
+    ]
+  }
+];
+const POS={"integers":[40,120],"wellorder":[250,120],"division":[460,120],"signeddivision":[670,120],"divisibility":[880,120],"divprops":[1090,120],"parity":[1300,120],"parityproof":[1510,120],"properperfect":[1090,250],"decimalrep":[880,370],"rule2510":[1090,370],"rule39":[1300,370],"rule48":[1510,370],"rule620":[1720,370],"rule7":[1930,370],"rule11":[2140,370],"baserep":[880,520],"basetodec":[1090,520],"dectobase":[1300,520],"directbase":[1510,520],"prime":[880,700],"primelemma":[1300,700],"fta":[1510,700],"factordiv":[1720,700],"infinite_mersenne":[1930,700],"gcd":[1090,840],"bezout":[1300,840],"lcm":[1510,840],"euclid":[1720,840],"extended":[1930,840],"primesearch":[2140,840],"factorial":[250,700],"floorceil":[460,700],"mastery":[2390,660]};
+const EDGES=[["integers","wellorder"],["wellorder","division"],["division","signeddivision"],["division","divisibility"],["divisibility","properperfect"],["divisibility","divprops"],["division","parity"],["parity","parityproof"],["divprops","parityproof"],["division","decimalrep"],["decimalrep","rule2510"],["decimalrep","rule39"],["decimalrep","rule48"],["rule2510","rule620"],["rule39","rule620"],["rule48","rule620"],["decimalrep","rule7"],["decimalrep","rule11"],["division","baserep"],["baserep","basetodec"],["baserep","dectobase"],["division","dectobase"],["basetodec","directbase"],["dectobase","directbase"],["divisibility","prime"],["prime","primelemma"],["gcd","primelemma"],["prime","fta"],["primelemma","fta"],["wellorder","fta"],["fta","factordiv"],["fta","infinite_mersenne"],["properperfect","infinite_mersenne"],["divisibility","gcd"],["gcd","bezout"],["divprops","bezout"],["wellorder","bezout"],["gcd","lcm"],["factordiv","lcm"],["division","euclid"],["gcd","euclid"],["euclid","extended"],["bezout","extended"],["prime","primesearch"],["rule2510","primesearch"],["rule39","primesearch"],["rule7","primesearch"],["rule11","primesearch"],["euclid","primesearch"],["integers","factorial"],["integers","floorceil"],["rule11","mastery"],["directbase","mastery"],["infinite_mersenne","mastery"],["lcm","mastery"],["extended","mastery"],["primesearch","mastery"],["factorial","mastery"],["floorceil","mastery"]];
+const GLOSSARY=[["Integer","整数","Whole-number values including negatives and 0.","ℤ"],["Natural number","自然数","In this PDF: 0,1,2,3,…","ℕ={0,1,2,…}"],["Well-Ordering Principle","良序原理","Every nonempty subset of ℕ has a least element.","min exists"],["Division Algorithm","整数除法算法","Unique b=aq+r with 0≤r<|a|.","b=aq+r"],["Dividend","被除数","The integer b in b=aq+r.","b"],["Divisor","除数","The nonzero integer a in b=aq+r.","a"],["Quotient","商","The integer q in b=aq+r.","q"],["Remainder","余数","The nonnegative r in the required interval.","0≤r<|a|"],["Divisibility","整除","a divides b when b=ac for integer c.","a|b"],["Proper divisor","真因子","Positive divisor smaller than n.","k|n, k<n"],["Perfect number","完全数","Equals sum of positive proper divisors.","6,28,…"],["Even","偶数","Divisible by 2.","2k"],["Odd","奇数","Not divisible by 2.","2k+1"],["Digit sum","数位和","Sum of decimal digits, used for 3 and 9 tests.","Σ digits"],["Alternating digit sum","交错数位和","Alternating +/− sum used for 11.","…−a₁+a₀"],["Base-b representation","b进制表示","Unique weighted sum using powers of b.","Σaᵢbⁱ"],["Binary","二进制","Base 2 representation.","base 2"],["Hexadecimal","十六进制","Base 16 representation using 0–9,A–F.","base 16"],["Prime","质数","Integer >1 with only divisors ±1,±p.","p"],["Composite","合数","Integer >1 that is not prime.","n=ab"],["Prime divisor lemma","质数整除乘积引理","Prime p dividing ab divides a or b.","p|ab⇒p|a or p|b"],["Fundamental Theorem of Arithmetic","算术基本定理","Unique prime factorization up to ordering.","n=∏pᵢ^{aᵢ}"],["Mersenne number","梅森数","Number of the form 2ⁿ−1.","Mₙ=2ⁿ−1"],["Common divisor","公因数","Positive integer dividing all listed integers.","d|aᵢ"],["GCD","最大公因数","Greatest common divisor.","gcd(a,b)"],["Coprime","互质","Greatest common divisor is 1.","gcd(a,b)=1"],["Bézout identity","贝祖恒等式","GCD as an integer linear combination.","d=ax+by"],["LCM","最小公倍数","Least positive common multiple.","lcm(a,b)"],["Euclidean Algorithm","欧几里得算法","Repeated division to compute gcd.","(a,b)→(b,r)"],["Extended Euclidean Algorithm","扩展欧几里得算法","Computes gcd plus Bézout coefficients.","g=ax+by"],["Sieve of Eratosthenes","埃拉托斯特尼筛法","Marks multiples to list primes.","sieve"],["Square-root primality bound","平方根判定界","A composite has a divisor no larger than √n.","p≤√n"],["Factorial","阶乘","Countdown product, with 0!=1.","n!"],["Floor","下取整","Greatest integer less than or equal to x.","⌊x⌋"],["Ceiling","上取整","Least integer greater than or equal to x.","⌈x⌉"],["Divisibility by 2","2的整除规则","Last digit even.","a₀ even"],["Divisibility by 3","3的整除规则","Digit sum divisible by 3.","Σdigits≡0 mod3"],["Divisibility by 4","4的整除规则","Last two digits divisible by 4.","last 2 digits"],["Divisibility by 5","5的整除规则","Ends in 0 or 5.","a₀∈{0,5}"],["Divisibility by 6","6的整除规则","Divisible by both 2 and 3.","2 & 3"],["Divisibility by 7","7的整除规则","For 10a+b, test a−2b or a+5b.","a−2b"],["Divisibility by 8","8的整除规则","Last three digits divisible by 8.","last 3 digits"],["Divisibility by 9","9的整除规则","Digit sum divisible by 9.","Σdigits≡0 mod9"],["Divisibility by 10","10的整除规则","Ends in 0.","a₀=0"],["Divisibility by 11","11的整除规则","Alternating digit sum divisible by 11.","alt sum"],["Divisibility by 20","20的整除规则","Last two digits are 00,20,40,60,80.","last two digits"],["Prime factor exponent rule","质因数指数规则","GCD uses min exponents; LCM uses max.","min/max"],["Modular inverse","模逆元","Coefficient from Bézout when gcd(a,m)=1.","ax≡1 (mod m)"]];
+const STORAGE_KEY = "integers-pdf-mastery-v1";
+const colors = {not_started:"#59657a",learning:"#3b82f6",needs_review:"#ef4444",partial:"#f59e0b",mastered:"#22c55e"};
+function loadStore(){
+  try {
+    const raw=JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}");
+    if(!raw||typeof raw!=="object"||Array.isArray(raw))return {};
+    const clean={};
+    for(const n of DATA){
+      const r=raw[n.id];
+      if(!r||typeof r!=="object"||Array.isArray(r)||!Object.hasOwn(colors,r.status))continue;
+      const validScore=v=>typeof v==="number"&&Number.isFinite(v)&&v>=0&&v<=100;
+      const score=validScore(r.score)?r.score:null;
+      const bestScore=validScore(r.bestScore)?Math.max(r.bestScore,score??0):score;
+      const status=score===null?(r.status==="not_started"?"not_started":"learning"):(score>=80?"mastered":score>=60?"partial":"needs_review");
+      clean[n.id]={status,score,bestScore,attempts:Number.isSafeInteger(r.attempts)&&r.attempts>=0?r.attempts:0,last:Number.isFinite(r.last)?r.last:null};
+    }
+    return clean;
+  } catch {return {}}
+}
+let memoryStore=loadStore(),selected=null;
+function safeSave(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(memoryStore))}catch{}}
+function getState(id){return memoryStore[id]?.status||"not_started"}
+function byId(id){return DATA.find(n=>n.id===id)}
+function depsMastered(n){return n.deps.every(d=>getState(d)==="mastered")}
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+function shuffleQuestion(q){const choices=shuffle(q.o.map((text,index)=>({text,index})));return {...q,o:choices.map(c=>c.text),a:choices.findIndex(c=>c.index===q.a)}}
+function escapeHTML(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function save(){safeSave();updateProgress();renderGraph();renderNext()}
+function selectNode(id){
+  if(!byId(id))return;
+  selected=id;
+  if(!memoryStore[id])memoryStore[id]={status:"learning",score:null,bestScore:null,attempts:0};
+  else if(getState(id)==="not_started")memoryStore[id].status="learning";
+  save();renderDetails();document.getElementById("lessonTitle").focus({preventScroll:true});
+}
+function renderGraph(){
+  const focused=document.activeElement?.classList.contains("node")?document.activeElement.dataset.id:null;
+  const eg=document.getElementById("edges"),ng=document.getElementById("nodes");eg.innerHTML="";ng.innerHTML="";
+  EDGES.forEach(([a,b])=>{const [x1,y1]=POS[a],[x2,y2]=POS[b],p=document.createElementNS("http://www.w3.org/2000/svg","path"),sx=x1+168,sy=y1+28,ex=x2-8,ey=y2+28,mx=(sx+ex)/2;p.setAttribute("d",`M ${sx} ${sy} C ${mx} ${sy},${mx} ${ey},${ex} ${ey}`);p.setAttribute("class","edge");p.setAttribute("marker-end","url(#arrowhead)");p.dataset.from=a;p.dataset.to=b;eg.appendChild(p)});
+  DATA.forEach(n=>{
+    const [x,y]=POS[n.id],g=document.createElementNS("http://www.w3.org/2000/svg","g"),r=document.createElementNS("http://www.w3.org/2000/svg","rect"),t=document.createElementNS("http://www.w3.org/2000/svg","text"),s=document.createElementNS("http://www.w3.org/2000/svg","text");
+    g.setAttribute("class","node");g.setAttribute("transform",`translate(${x},${y})`);g.dataset.id=n.id;
+    r.setAttribute("width","168");r.setAttribute("height","56");r.setAttribute("rx","12");r.setAttribute("fill",colors[getState(n.id)]);r.setAttribute("stroke","#273650");
+    t.setAttribute("x","84");t.setAttribute("y","22");t.setAttribute("text-anchor","middle");const title=n.title.replace(/^\d+\.\s*/,"");t.textContent=title.length>25?title.slice(0,23)+"…":title;
+    s.setAttribute("x","84");s.setAttribute("y","42");s.setAttribute("text-anchor","middle");s.setAttribute("class","small");s.setAttribute("lang","zh-CN");s.textContent=n.zh+" · p."+n.pages;
+    g.append(r,t,s);g.setAttribute("tabindex","0");g.setAttribute("role","button");g.setAttribute("aria-label",`${n.title} / ${n.zh}; ${getState(n.id).replaceAll("_"," ")}`);g.setAttribute("aria-pressed",String(selected===n.id));
+    g.addEventListener("click",()=>selectNode(n.id));g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();selectNode(n.id)}});ng.appendChild(g);
+  });
+  highlight();if(focused)document.querySelector(`.node[data-id="${focused}"]`)?.focus({preventScroll:true});
+}
+function highlight(){
+  document.querySelectorAll(".node").forEach(g=>{g.classList.remove("selected","dep");g.setAttribute("aria-pressed",String(g.dataset.id===selected))});document.querySelectorAll(".edge").forEach(e=>e.classList.remove("hl"));
+  if(!selected)return;document.querySelector(`.node[data-id="${selected}"]`)?.classList.add("selected");const n=byId(selected);
+  n.deps.forEach(d=>document.querySelector(`.node[data-id="${d}"]`)?.classList.add("dep"));document.querySelectorAll(".edge").forEach(e=>{if(e.dataset.to===selected&&n.deps.includes(e.dataset.from))e.classList.add("hl")});
+}
+function integerInRange(n,min=-Number.MAX_SAFE_INTEGER,max=Number.MAX_SAFE_INTEGER){return Number.isSafeInteger(n)&&n>=min&&n<=max}
+function gcd(a,b){if(!integerInRange(a)||!integerInRange(b))return null;a=Math.abs(a);b=Math.abs(b);while(b)[a,b]=[b,a%b];return a}
+function lcm(a,b){if(!integerInRange(a)||!integerInRange(b))return null;if(!a||!b)return 0;const result=Math.abs(a/gcd(a,b)*b);return Number.isSafeInteger(result)?result:null}
+function euclidSteps(a,b){if(!integerInRange(a,-1e6,1e6)||!integerInRange(b,-1e6,1e6))return null;a=Math.abs(a);b=Math.abs(b);if(a<b)[a,b]=[b,a];const steps=[];while(b){const q=Math.floor(a/b),r=a%b;steps.push([a,b,q,r]);[a,b]=[b,r]}return {g:a,steps}}
+function egcd(a,b){if(!integerInRange(a,-1e6,1e6)||!integerInRange(b,-1e6,1e6))return null;let old_r=a,r=b,old_s=1,s=0,old_t=0,t=1;while(r!==0){const q=Math.trunc(old_r/r);[old_r,r]=[r,old_r-q*r];[old_s,s]=[s,old_s-q*s];[old_t,t]=[t,old_t-q*t]}if(old_r<0){old_r=-old_r;old_s=-old_s;old_t=-old_t}return {g:old_r,x:old_s,y:old_t}}
+function euclidDiv(a,b){if(!integerInRange(a,-1e6,1e6)||!integerInRange(b,-1e6,1e6)||a===0)return null;const m=Math.abs(a),r=((b%m)+m)%m;return {q:(b-r)/a,r}}
+function divisors(n){if(!integerInRange(n,-1e9,1e9))return [];n=Math.abs(n);if(n===0)return [];const ds=[];for(let i=1;i*i<=n;i++)if(n%i===0){ds.push(i);if(i*i!==n)ds.push(n/i)}return ds.sort((a,b)=>a-b)}
+function factorize(n){if(!integerInRange(n,-1e9,1e9))return [];n=Math.abs(n);if(n<2)return [];const f=[];for(let p=2;p*p<=n;p+=(p===2?1:2)){let c=0;while(n%p===0){n/=p;c++}if(c)f.push([p,c])}if(n>1)f.push([n,1]);return f}
+function factorString(n){if(!integerInRange(n,-1e9,1e9))return "Outside the supported range";if(n===0)return "0 has no prime factorization";if(Math.abs(n)===1)return String(n);return (n<0?"−1 · ":"")+factorize(n).map(([p,e])=>e===1?`${p}`:`${p}^${e}`).join(" · ")}
+function isPrime(n){if(!integerInRange(n,2,2147483647))return false;if(n%2===0)return n===2;for(let p=3;p*p<=n;p+=2)if(n%p===0)return false;return true}
+function digitSum(n){if(!integerInRange(n))return null;return String(Math.abs(n)).split("").reduce((s,d)=>s+Number(d),0)}
+function altSum11(n){if(!integerInRange(n))return null;return [...String(Math.abs(n))].reverse().reduce((s,d,i)=>s+(i%2===0?Number(d):-Number(d)),0)}
+function rule7Trace(n){if(!integerInRange(n))return [];let x=Math.abs(n),trace=[x];while(x>=70){const a=Math.floor(x/10),b=x%10;x=Math.abs(a-2*b);trace.push(x)}return trace}
+function toBase(n,b){return integerInRange(n)&&integerInRange(b,2,36)?BigInt(n).toString(b).toUpperCase():"invalid"}
+function fromBase(s,b){
+  if(!integerInRange(b,2,36))return null;s=String(s).trim().toUpperCase();if(!/^-?[0-9A-Z]+$/.test(s)||s.length>256)return null;
+  const negative=s.startsWith("-");if(negative)s=s.slice(1);let value=0n;
+  for(const ch of s){const digit=parseInt(ch,36);if(digit>=b)return null;value=value*BigInt(b)+BigInt(digit)}return negative?-value:value;
+}
+function factorialBig(n){if(!integerInRange(n,0,500))return null;let value=1n;for(let i=2n;i<=BigInt(n);i++)value*=i;return value}
+function prepareLab(id){
+  const visual=document.querySelector("#details .visual");if(!visual)return;
+  const wide=["decN","ruleN","baseDec"],bounds={perfN:[1,100000],mersP:[2,31],primeN:[1,1e9],psN:[2,1e6],svN:[10,200],facN:[0,500]};
+  for(const input of visual.querySelectorAll('input[type="number"]')){
+    const [min,max]=bounds[input.id]||(wide.includes(input.id)?[-Number.MAX_SAFE_INTEGER,Number.MAX_SAFE_INTEGER]:[-1e6,1e6]);
+    input.min=String(min);input.max=String(max);input.step=input.id==="fcX"?"any":"1";input.required=true;input.setAttribute("aria-describedby","labInputHelp labFeedback");
+  }
+  const hasNumbers=visual.querySelector('input[type="number"]');
+  if(hasNumbers){const note=document.createElement("div");note.id="labInputHelp";note.className="note";
+    const inputs=[...visual.querySelectorAll('input[type="number"]')];note.textContent=inputs.map(input=>`${input.closest("label").childNodes[0].textContent.trim()}: ${input.id==="fcX"?"finite numbers":"whole numbers"} from ${Number(input.min).toLocaleString("en-US")} to ${Number(input.max).toLocaleString("en-US")}`).join(". ")+".";visual.appendChild(note);}
+  const feedback=document.createElement("div");feedback.id="labFeedback";feedback.className="note";feedback.setAttribute("role","status");feedback.setAttribute("aria-live","polite");visual.appendChild(feedback);
+  if(["gcd","lcm","euclid","bezout","extended","mastery"].includes(id)){const note=document.createElement("div");note.className="note";note.textContent="Calculator convention: gcd(0,0)=0 and lcm(a,0)=0. Otherwise gcd and lcm are nonnegative; the PDF's positive-divisor statements exclude the all-zero case. Modular inverses here use a modulus greater than 1.";visual.appendChild(note);}
+}
+function validateLab(){
+  const visual=document.querySelector("#details .visual"),feedback=document.getElementById("labFeedback");if(!visual)return false;
+  const inputs=[...visual.querySelectorAll('input[type="number"]')];let first=null;
+  for(const input of inputs){const value=Number(input.value),valid=input.value.trim()!==""&&Number.isFinite(value)&&(input.id==="fcX"||Number.isSafeInteger(value))&&value>=Number(input.min)&&value<=Number(input.max);input.setAttribute("aria-invalid",String(!valid));if(!valid&&!first)first=input;}
+  if(first){visual.querySelectorAll('div[id]').forEach(el=>{if(!["labInputHelp","labFeedback"].includes(el.id))el.replaceChildren()});feedback.textContent=`Enter ${first.id==="fcX"?"a finite number":"a whole number"} from ${Number(first.min).toLocaleString("en-US")} to ${Number(first.max).toLocaleString("en-US")} for ${first.closest("label").childNodes[0].textContent.trim()}.`;return false;}
+  if(feedback)feedback.textContent="";return true;
+}
+
+function visualHTML(id){
+if(id==="integers")return `<div class="visual"><div class="visualTitle">Integer number line</div><div class="formulaPanel" style="text-align:center">… −5 −4 −3 −2 −1 <b style="color:#7ee7ac">0</b> 1 2 3 4 5 …<br><span class="tiny">ℤ extends forever in both directions.</span></div></div>`;
+if(id==="wellorder")return `<div class="visual"><div class="visualTitle">Least-element explorer</div><div class="miniControls"><button class="woBtn" data-set="evens">even naturals ≥ 8</button><button class="woBtn" data-set="neg">negative integers</button><button class="woBtn" data-set="interval">real interval (0,1)</button></div><div id="woOut" class="statusBox"></div></div>`;
+if(id==="division"||id==="signeddivision")return `<div class="visual"><div class="visualTitle">Division Algorithm calculator</div><div class="calcGrid"><label>divisor a (nonzero)<input id="divA" type="number" value="${id==="signeddivision"?-7:6}"></label><label>dividend b<input id="divB" type="number" value="${id==="signeddivision"?101:75}"></label></div><div id="divOut" class="bigEq"></div><div id="divNote" class="note"></div></div>`;
+if(id==="divisibility")return `<div class="visual"><div class="visualTitle">Divisibility checker</div><div class="calcGrid"><label>a<input id="chkA" type="number" value="21"></label><label>b<input id="chkB" type="number" value="84"></label></div><div id="chkOut" class="calcResult"></div></div>`;
+if(id==="properperfect"||id==="infinite_mersenne")return `<div class="visual"><div class="visualTitle">${id==="properperfect"?"Proper divisor / perfect-number analyzer":"Mersenne & perfect-number explorer"}</div>${id==="properperfect"?`<div class="calcGrid"><label>positive integer n<input id="perfN" type="number" min="1" max="100000" value="28"></label><div></div></div><div id="perfOut"></div>`:`<div class="calcGrid"><label>exponent p<input id="mersP" type="number" min="2" max="31" value="5"></label><div></div></div><div id="mersOut"></div>`}</div>`;
+if(id==="divprops")return `<div class="visual"><div class="visualTitle">Linear-combination divisibility lab</div><div class="calcGrid"><label>common divisor a<input id="lcA" type="number" value="7"></label><label>b<input id="lcB" type="number" value="14"></label><label>c<input id="lcC" type="number" value="21"></label><label>x<input id="lcX" type="number" value="2"></label><label>y<input id="lcY" type="number" value="1"></label></div><div id="lcOut" class="bigEq"></div></div>`;
+if(id==="parity")return `<div class="visual"><div class="visualTitle">Parity classifier</div><div class="calcGrid"><label>a<input id="parA" type="number" value="7"></label><label>b<input id="parB" type="number" value="4"></label></div><div id="parOut" class="propGrid"></div></div>`;
+if(id==="parityproof")return `<div class="visual"><div class="visualTitle">Proof normal forms</div><div class="flow"><div class="box"><strong>Even</strong><span class="formulaBig">2k</span></div><div class="box"><strong>Odd</strong><span class="formulaBig">2g+1</span></div><div class="arrow">→</div><div class="box good"><strong>Simplify</strong><span class="tiny">factor into 2m or 2m+1</span></div></div></div>`;
+if(id==="decimalrep")return `<div class="visual"><div class="visualTitle">Decimal place-value expander</div><div class="calcGrid"><label>integer<input id="decN" type="number" value="5783214"></label><div></div></div><div id="decOut" class="formulaPanel"></div></div>`;
+if(["rule2510","rule39","rule48","rule620","rule7","rule11"].includes(id))return `<div class="visual"><div class="visualTitle">Divisibility rules lab</div><div class="calcGrid"><label>integer n<input id="ruleN" type="number" value="${id==="rule7"?679:id==="rule11"?1111:2544}"></label><div></div></div><div id="ruleOut"></div></div>`;
+if(["baserep","basetodec","dectobase"].includes(id))return `<div class="visual"><div class="visualTitle">Base conversion explorer</div><div class="calcGrid"><label>decimal integer<input id="baseDec" type="number" value="86"></label><label>target base b<select id="baseB">${[2,3,4,5,7,8,9,12,16].map(b=>`<option ${b===7?"selected":""}>${b}</option>`).join("")}</select></label><label>base-b numeral<input id="baseStr" maxlength="256" value="152"></label><div></div></div><div id="baseOut" class="formulaPanel"></div></div>`;
+if(id==="directbase")return `<div class="visual"><div class="visualTitle">Binary ↔ hexadecimal grouping</div><div class="calcGrid"><label>binary digits<input id="binStr" maxlength="256" value="000110101101"></label><div></div></div><div id="binOut" class="formulaPanel"></div></div>`;
+if(["prime","factordiv","fta"].includes(id))return `<div class="visual"><div class="visualTitle">Prime / factorization explorer</div><div class="calcGrid"><label>integer n<input id="primeN" type="number" min="1" max="1000000000" value="${id==="factordiv"?4320:131}"></label><div></div></div><div id="primeOut"></div></div>`;
+if(id==="primelemma")return `<div class="visual"><div class="visualTitle">Prime-divisor lemma checker</div><div class="calcGrid"><label>p<input id="plP" type="number" value="5"></label><label>a<input id="plA" type="number" value="2"></label><label>b<input id="plB" type="number" value="15"></label><div></div></div><div id="plOut" class="formulaPanel"></div></div>`;
+if(id==="gcd"||id==="lcm")return `<div class="visual"><div class="visualTitle">GCD / LCM calculator</div><div class="calcGrid"><label>a<input id="gA" type="number" value="28"></label><label>b<input id="gB" type="number" value="42"></label></div><div id="gOut" class="propGrid"></div></div>`;
+if(id==="bezout"||id==="extended")return `<div class="visual"><div class="visualTitle">Bézout / Extended Euclid calculator</div><div class="calcGrid"><label>a<input id="egA" type="number" value="${id==="extended"?45:372}"></label><label>b<input id="egB" type="number" value="${id==="extended"?14:42}"></label></div><div id="egOut" class="formulaPanel"></div></div>`;
+if(id==="euclid")return `<div class="visual"><div class="visualTitle">Euclidean Algorithm step table</div><div class="calcGrid"><label>a<input id="euA" type="number" value="372"></label><label>b<input id="euB" type="number" value="42"></label></div><div id="euOut"></div></div>`;
+if(id==="primesearch")return `<div class="visual"><div class="visualTitle">√n primality test + Sieve</div><div class="calcGrid"><label>test n<input id="psN" type="number" min="2" max="1000000" value="131"></label><label>sieve up to<input id="svN" type="number" min="10" max="200" value="50"></label></div><div id="psOut" class="formulaPanel"></div><div id="sieveOut"></div></div>`;
+if(id==="factorial")return `<div class="visual"><div class="visualTitle">Factorial calculator</div><div class="calcGrid"><label>n (0–500)<input id="facN" type="number" min="0" max="500" value="10"></label><div></div></div><div id="facOut" class="formulaPanel"></div></div>`;
+if(id==="floorceil")return `<div class="visual"><div class="visualTitle">Floor / ceiling explorer</div><div class="calcGrid"><label>real x<input id="fcX" type="number" step="0.1" value="-3.6"></label><div></div></div><div id="fcOut" class="propGrid"></div></div>`;
+if(id==="mastery")return `<div class="visual"><div class="visualTitle">Integer synthesis dashboard</div><div class="calcGrid"><label>n<input id="synN" type="number" value="84"></label><label>second integer m<input id="synM" type="number" value="30"></label></div><div id="synOut"></div></div>`;
+return `<div class="visual"><div class="visualTitle">Concept flow</div><div class="flow"><div class="box">Definition</div><div class="arrow">→</div><div class="box">Pattern</div><div class="arrow">→</div><div class="box good">Practice / proof</div></div></div>`;
+}
+function attachVisual(id){
+if(id==="wellorder"){const out=document.getElementById("woOut");function show(k){if(k==="evens")out.innerHTML="Set = {8,10,12,…} · smallest element = <b>8</b>";if(k==="neg")out.innerHTML="Set = {…,-3,-2,-1} · <b>no smallest integer</b>";if(k==="interval")out.innerHTML="Set = (0,1) in ℝ · <b>no smallest real number</b>";}document.querySelectorAll(".woBtn").forEach(b=>b.addEventListener("click",()=>show(b.dataset.set)));show("evens")}
+if(id==="division"||id==="signeddivision"){const upd=()=>{if(!validateLab())return;let a=+document.getElementById("divA").value,b=+document.getElementById("divB").value,o=document.getElementById("divOut"),note=document.getElementById("divNote");let z=euclidDiv(a,b);if(!z){o.textContent="a must be nonzero";note.textContent="";return}o.innerHTML=`${b} = (${a})(${z.q}) + ${z.r}`;note.textContent=`Check: 0 ≤ ${z.r} < |${a}| = ${Math.abs(a)}. This is the PDF's Division Algorithm remainder convention.`};["divA","divB"].forEach(x=>document.getElementById(x).addEventListener("input",upd));upd()}
+if(id==="divisibility"){const upd=()=>{if(!validateLab())return;let a=Math.trunc(+document.getElementById("chkA").value),b=Math.trunc(+document.getElementById("chkB").value);let ok=a!==0&&b%a===0;document.getElementById("chkOut").innerHTML=a===0?"Divisor a must be nonzero":`${a} ${ok?"|":"∤"} ${b}${ok?` because ${b}=${a}·${b/a}`:""}`};["chkA","chkB"].forEach(x=>document.getElementById(x).addEventListener("input",upd));upd()}
+if(id==="properperfect"){const upd=()=>{if(!validateLab())return;let n=Math.max(1,Math.trunc(+document.getElementById("perfN").value)),ds=divisors(n).filter(d=>d<n),sum=ds.reduce((a,b)=>a+b,0),perfect=sum===n;document.getElementById("perfOut").innerHTML=`<div class="formulaPanel">Proper positive divisors: ${ds.join(", ")||"none"}<br>Sum = ${sum}</div><div class="statusBox ${perfect?"ok":"bad"}">${perfect?"✓ Perfect number":"Not perfect"}</div>`};document.getElementById("perfN").addEventListener("input",upd);upd()}
+if(id==="infinite_mersenne"){const upd=()=>{if(!validateLab())return;let p=Math.max(2,Math.min(31,Math.trunc(+document.getElementById("mersP").value))),M=2**p-1,mp=isPrime(M),P=2n**BigInt(p-1)*BigInt(M);document.getElementById("mersOut").innerHTML=`<div class="formulaPanel">M_${p} = 2^${p} − 1 = ${M}<br>p prime? ${isPrime(p)?"yes":"no"} · M_p prime? ${mp?"yes":"no"}${mp?`<br>Associated perfect number = 2^${p-1}·${M} = <b>${P}</b>`:""}</div>`};document.getElementById("mersP").addEventListener("input",upd);upd()}
+if(id==="divprops"){const upd=()=>{if(!validateLab())return;let a=Math.trunc(+document.getElementById("lcA").value),b=Math.trunc(+document.getElementById("lcB").value),c=Math.trunc(+document.getElementById("lcC").value),x=Math.trunc(+document.getElementById("lcX").value),y=Math.trunc(+document.getElementById("lcY").value),v=b*x+c*y,ok=a!==0&&b%a===0&&c%a===0;document.getElementById("lcOut").innerHTML=`b·x+c·y = ${b}·${x} + ${c}·${y} = ${v}<br>${ok?`Since ${a} divides both b and c, theorem predicts ${a} | ${v} → ${v%a===0?"✓":"check"}`:`Choose a that divides both b and c to apply the theorem.`}`};["lcA","lcB","lcC","lcX","lcY"].forEach(x=>document.getElementById(x).addEventListener("input",upd));upd()}
+if(id==="parity"){const upd=()=>{if(!validateLab())return;let a=Math.trunc(+document.getElementById("parA").value),b=Math.trunc(+document.getElementById("parB").value),pa=a%2===0?"even":"odd",pb=b%2===0?"even":"odd",s=(a+b)%2===0?"even":"odd",p=(a*b)%2===0?"even":"odd";document.getElementById("parOut").innerHTML=`<div class="propPill yes">a=${a}<br><b>${pa}</b></div><div class="propPill yes">b=${b}<br><b>${pb}</b></div><div class="propPill">a+b=${a+b}<br><b>${s}</b></div><div class="propPill">ab=${a*b}<br><b>${p}</b></div>`};["parA","parB"].forEach(x=>document.getElementById(x).addEventListener("input",upd));upd()}
+if(id==="decimalrep"){const upd=()=>{if(!validateLab())return;let n=Math.trunc(+document.getElementById("decN").value),s=String(Math.abs(n)),terms=s.split("").map((d,i)=>`${d}×10^${s.length-1-i}`);document.getElementById("decOut").innerHTML=`${n<0?"−(":""}${terms.join(" + ")}${n<0?")":""} = ${n}`};document.getElementById("decN").addEventListener("input",upd);upd()}
+if(["rule2510","rule39","rule48","rule620","rule7","rule11"].includes(id)){const upd=()=>{if(!validateLab())return;let n=Math.trunc(+document.getElementById("ruleN").value),a=Math.abs(n),last=a%10,last2=a%100,last3=a%1000,ds=digitSum(n),alt=altSum11(n),trace=rule7Trace(n);let lines=[];if(id==="rule2510")lines=[`2: last digit ${last} → ${n%2===0?"divisible":"not divisible"}`,`5: last digit ${last} → ${n%5===0?"divisible":"not divisible"}`,`10: last digit ${last} → ${n%10===0?"divisible":"not divisible"}`];if(id==="rule39")lines=[`digit sum = ${ds}`,`3: ${ds%3===0?"✓ divisible":"✗ not divisible"}`,`9: ${ds%9===0?"✓ divisible":"✗ not divisible"}`];if(id==="rule48")lines=[`last two digits = ${last2} → /4? ${last2%4===0?"yes":"no"}`,`last three digits = ${last3} → /8? ${last3%8===0?"yes":"no"}`];if(id==="rule620")lines=[`/6? even=${n%2===0}, digit sum multiple of 3=${ds%3===0} → ${n%6===0?"YES":"NO"}`,`/20? last two digits=${String(last2).padStart(2,"0")} → ${n%20===0?"YES":"NO"}`];if(id==="rule7")lines=[`alternate PDF shortcut a−2b trace: ${trace.join(" → ")}`,`Result: ${n%7===0?"divisible by 7":"not divisible by 7"}`];if(id==="rule11")lines=[`alternating digit sum (from units) = ${alt}`,`Result: ${alt%11===0?"divisible by 11":"not divisible by 11"}`];document.getElementById("ruleOut").innerHTML=`<div class="formulaPanel">${lines.join("<br>")}</div>`};document.getElementById("ruleN").addEventListener("input",upd);upd()}
+if(["baserep","basetodec","dectobase"].includes(id)){const upd=()=>{if(!validateLab())return;let dec=Math.trunc(+document.getElementById("baseDec").value),b=+document.getElementById("baseB").value,s=document.getElementById("baseStr").value,converted=toBase(dec,b),back=fromBase(s,b);document.getElementById("baseOut").innerHTML=`decimal ${dec} → base ${b}: <b>${converted}</b><sub>${b}</sub><br>${escapeHTML(s)}<sub>${b}</sub> → decimal: <b>${back===null?"invalid digits":back}</b>`};["baseDec","baseB","baseStr"].forEach(x=>document.getElementById(x).addEventListener("input",upd));upd()}
+if(id==="directbase"){const upd=()=>{if(!validateLab())return;let s=document.getElementById("binStr").value.replace(/\s+/g,"");if(!/^[01]+$/.test(s)||s.length>256){document.getElementById("binOut").textContent="Enter 1–256 binary digits (0 or 1).";return}let padded=s.padStart(Math.ceil(s.length/4)*4,"0"),groups=padded.match(/.{1,4}/g)||[],hex=groups.map(g=>parseInt(g,2).toString(16).toUpperCase()).join("");document.getElementById("binOut").innerHTML=`${groups.join(" ")}₂ → <b>${hex}</b>₁₆`};document.getElementById("binStr").addEventListener("input",upd);upd()}
+if(["prime","factordiv","fta"].includes(id)){const upd=()=>{if(!validateLab())return;let n=Math.max(1,Math.trunc(+document.getElementById("primeN").value)),f=factorize(n),ds=divisors(n);document.getElementById("primeOut").innerHTML=`<div class="propGrid"><div class="propPill ${isPrime(n)?"yes":"no"}"><b>${n}</b><br>${isPrime(n)?"PRIME":n===1?"NEITHER":"COMPOSITE"}</div><div class="propPill"><b>Factorization</b><br>${factorString(n)}</div><div class="propPill"><b># positive divisors</b><br>${ds.length}</div></div>${id==="factordiv"?`<div class="formulaPanel" style="margin-top:10px">Positive divisors: ${ds.join(", ")}</div>`:""}`};document.getElementById("primeN").addEventListener("input",upd);upd()}
+if(id==="primelemma"){const upd=()=>{if(!validateLab())return;let p=Math.trunc(+document.getElementById("plP").value),a=Math.trunc(+document.getElementById("plA").value),b=Math.trunc(+document.getElementById("plB").value),prod=a*b;document.getElementById("plOut").innerHTML=`p=${p} (${isPrime(p)?"prime":"not prime"}), ab=${prod}<br>p|ab? ${p!==0&&prod%p===0} · p|a? ${p!==0&&a%p===0} · p|b? ${p!==0&&b%p===0}<br>${isPrime(p)&&prod%p===0?`Lemma predicts at least one factor is divisible by p → ${a%p===0||b%p===0?"✓":"check"}`:"Prime lemma applies only when p is prime and p|ab."}`};["plP","plA","plB"].forEach(x=>document.getElementById(x).addEventListener("input",upd));upd()}
+if(id==="gcd"||id==="lcm"){const upd=()=>{if(!validateLab())return;let a=Math.trunc(+document.getElementById("gA").value),b=Math.trunc(+document.getElementById("gB").value),g=gcd(a,b),l=lcm(a,b);document.getElementById("gOut").innerHTML=`<div class="propPill yes"><b>gcd</b><br>${g}</div><div class="propPill yes"><b>lcm</b><br>${l}</div><div class="propPill"><b>gcd·lcm</b><br>${g*l}</div><div class="propPill"><b>|ab|</b><br>${Math.abs(a*b)}</div>`};["gA","gB"].forEach(x=>document.getElementById(x).addEventListener("input",upd));upd()}
+if(id==="bezout"||id==="extended"){const upd=()=>{if(!validateLab())return;let a=Math.trunc(+document.getElementById("egA").value),b=Math.trunc(+document.getElementById("egB").value),z=egcd(a,b),extra=z.g===1&&Math.abs(b)>1?`<br>Since gcd=1, x=${z.x} is an inverse coefficient for a modulo |b| (reduce it modulo |b| if desired).`:"";document.getElementById("egOut").innerHTML=`gcd(${a},${b}) = <b>${z.g}</b><br>${z.g} = (${a})(${z.x}) + (${b})(${z.y})${extra}`};["egA","egB"].forEach(x=>document.getElementById(x).addEventListener("input",upd));upd()}
+if(id==="euclid"){const upd=()=>{if(!validateLab())return;let a=Math.trunc(+document.getElementById("euA").value),b=Math.trunc(+document.getElementById("euB").value),z=euclidSteps(a,b),rows=z.steps.map(([x,y,q,r])=>`<tr><td>${x}</td><td>${y}</td><td>${q}</td><td>${r}</td><td>${x} = ${y}·${q} + ${r}</td></tr>`).join("");document.getElementById("euOut").innerHTML=`<table class="stepTable"><tr><th>dividend</th><th>divisor</th><th>q</th><th>r</th><th>equation</th></tr>${rows}</table><div class="statusBox ok">gcd = <b>${z.g}</b>${z.steps.length?" (last nonzero value in the Euclidean sequence)":" (zero-input convention; no division steps needed)"}</div>`};["euA","euB"].forEach(x=>document.getElementById(x).addEventListener("input",upd));upd()}
+if(id==="primesearch"){const upd=()=>{if(!validateLab())return;let n=Math.max(2,Math.trunc(+document.getElementById("psN").value)),limit=Math.floor(Math.sqrt(n)),checks=[];for(let p=2;p<=limit;p++)if(isPrime(p))checks.push(`${p}:${n%p===0?"divides":"no"}`);document.getElementById("psOut").innerHTML=`√${n} ≈ ${Math.sqrt(n).toFixed(3)} → check primes ≤ ${limit}<br>${checks.join(" · ")||"No prime divisors need checking."}<br><b>${n} is ${isPrime(n)?"prime":"composite"}</b>`;let m=Math.max(10,Math.min(200,Math.trunc(+document.getElementById("svN").value))),cells=[];for(let i=2;i<=m;i++)cells.push(`<div class="sieveCell ${isPrime(i)?"prime":"comp"}">${i}</div>`);document.getElementById("sieveOut").innerHTML=`<div class="note">Green cells are primes through ${m}.</div><div class="sieveGrid">${cells.join("")}</div>`};["psN","svN"].forEach(x=>document.getElementById(x).addEventListener("input",upd));upd()}
+if(id==="factorial"){const upd=()=>{if(!validateLab())return;let n=Math.trunc(+document.getElementById("facN").value),f=factorialBig(n);document.getElementById("facOut").innerHTML=f===null?"Enter 0≤n≤500.":`${n}! = <b>${f.toString()}</b><br><span class="note">${f.toString().length} decimal digit(s)</span>`};document.getElementById("facN").addEventListener("input",upd);upd()}
+if(id==="floorceil"){const upd=()=>{if(!validateLab())return;let x=+document.getElementById("fcX").value;document.getElementById("fcOut").innerHTML=`<div class="propPill yes"><b>⌊x⌋</b><br>${Math.floor(x)}</div><div class="propPill"><b>x</b><br>${x}</div><div class="propPill yes"><b>⌈x⌉</b><br>${Math.ceil(x)}</div>`};document.getElementById("fcX").addEventListener("input",upd);upd()}
+if(id==="mastery"){const upd=()=>{if(!validateLab())return;let n=Math.trunc(+document.getElementById("synN").value),m=Math.trunc(+document.getElementById("synM").value),ds=digitSum(n),g=gcd(n,m),l=lcm(n,m);document.getElementById("synOut").innerHTML=`<div class="propGrid"><div class="propPill"><b>Parity</b><br>${n%2===0?"even":"odd"}</div><div class="propPill"><b>Prime?</b><br>${isPrime(n)?"yes":"no"}</div><div class="propPill"><b>Factorization</b><br>${factorString(n)}</div><div class="propPill"><b>Digit sum</b><br>${ds}</div><div class="propPill"><b>gcd(n,m)</b><br>${g}</div><div class="propPill"><b>lcm(n,m)</b><br>${l}</div></div><div class="formulaPanel" style="margin-top:10px">Divisible by: ${[2,3,4,5,6,7,8,9,10,11].filter(d=>n%d===0).join(", ")||"none of 2..11"}<br>Binary: ${toBase(n,2)}₂ · Hex: ${toBase(n,16)}₁₆</div>`};["synN","synM"].forEach(x=>document.getElementById(x).addEventListener("input",upd));upd()}
+}
+function questionHTML(q,i,name,attribute){
+  const labelId=`${name}-label`;
+  return `<div class="q" ${attribute}="${i}" role="group" aria-labelledby="${labelId}"><strong id="${labelId}">Q${i+1}. ${q.q}</strong>${q.o.map((option,j)=>`<label class="opt"><input type="radio" name="${name}" value="${j}"> ${option}</label>`).join("")}<div class="explain" hidden></div></div>`;
+}
+function renderDetails(){
+  const n=byId(selected);if(!n)return;
+  const st=memoryStore[n.id]||{status:"not_started",score:null,bestScore:null,attempts:0};
+  document.getElementById("stateLabel").textContent=getState(n.id).replaceAll("_"," ");
+  const deps=n.deps.length?n.deps.map(d=>`${byId(d).title} / <span lang="zh-CN">${byId(d).zh}</span> · ${getState(d).replaceAll("_"," ")}`).join("<br>"):"No prerequisites";
+  const chosen=shuffle(n.quiz).map(shuffleQuestion);window.currentQuiz={node:n,qs:chosen,graded:false};
+  document.getElementById("details").innerHTML=`<div class="badges"><span class="badge">${n.group}</span><span class="badge">PDF p.${n.pages}</span><span class="badge">${n.quiz.length} question pool</span><span class="scorePill" id="scorePill"></span></div><h2 id="lessonTitle" tabindex="-1">${n.title}</h2><div class="zhTitle" lang="zh-CN">${n.zh}</div><p class="summary">${n.summary}</p><div class="sectionTitle">Key facts</div><ul class="keys">${n.key.map(k=>`<li>${k}</li>`).join("")}</ul><div class="lessonGrid"><div class="lessonCard"><h4>Plain-English intuition</h4><p>${n.intuition}</p></div><div class="lessonCard"><h4>Why it matters</h4><p>${n.why}</p></div><div class="lessonCard"><h4>Worked example</h4><p>${n.worked}</p></div><div class="lessonCard warn"><h4>Common mistake / source note</h4><p>${n.mistake}</p></div><div class="lessonCard memory" style="grid-column:1/-1"><h4>Memory hook</h4><p>${n.memory}</p></div></div>${visualHTML(n.id)}<div class="depBox"><strong>Prerequisites / <span lang="zh-CN">前置知识</span></strong><br>${deps}</div><div class="quiz"><div class="quizHead"><div><strong>Mastery Check</strong><div class="masteryRule">Each check has 4 questions: 4/4 = mastered (100%); 3/4 = partial (75%); 0–2/4 = review. Reset check reshuffles these same questions and their answer choices.</div></div><button type="button" id="newSetBtn">Reset check</button></div><form id="quizForm">${chosen.map((q,i)=>questionHTML(q,i,`${n.id}-q${i}`,"data-q")).join("")}<button class="primary" type="submit">Check answers</button></form><div id="quizResult" role="status" aria-live="polite"></div></div>`;
+  refreshScorePill(n.id);prepareLab(n.id);attachVisual(n.id);
+  document.getElementById("newSetBtn").addEventListener("click",()=>{renderDetails();document.querySelector('#quizForm input')?.focus()});
+  document.getElementById("quizForm").addEventListener("submit",gradeQuiz);highlight();
+}
+function refreshScorePill(id){const pill=document.getElementById("scorePill"),color=colors[getState(id)],best=memoryStore[id]?.bestScore;if(!pill)return;pill.textContent=best==null?"No score":`Best ${best}%`;pill.style.cssText=`background:${color}22;border:1px solid ${color};color:${color}`}
+function gradeAnswers(form,questions,names,attribute){
+  const selections=names.map(name=>form.querySelector(`input[name="${name}"]:checked`));
+  if(selections.some(value=>!value)){document.getElementById("quizResult").innerHTML=`<div class="result">Please answer all ${questions.length} questions first.</div>`;return null;}
+  let correct=0;
+  questions.forEach((q,i)=>{const block=form.querySelector(`[${attribute}="${i}"]`),index=Number(selections[i].value),labels=block.querySelectorAll(".opt"),explanation=block.querySelector(".explain");if(index===q.a)correct++;labels[q.a].classList.add("correct");if(index!==q.a)labels[index].classList.add("wrong");explanation.hidden=false;explanation.innerHTML=`<strong>${index===q.a?"✓ Correct":"✗ Review"}</strong> — ${q.why}`;});
+  form.querySelectorAll("input,button[type=submit]").forEach(el=>el.disabled=true);return correct;
+}
+function gradeQuiz(e){
+  e.preventDefault();const quiz=window.currentQuiz;if(!quiz||quiz.graded)return;
+  const {node:n,qs}=quiz,correct=gradeAnswers(e.currentTarget,qs,qs.map((q,i)=>`${n.id}-q${i}`),"data-q");if(correct===null)return;
+  quiz.graded=true;const score=Math.round(100*correct/qs.length),status=score>=80?"mastered":score>=60?"partial":"needs_review",old=memoryStore[n.id]||{};
+  memoryStore[n.id]={...old,status,score,bestScore:Math.max(old.bestScore??0,score),attempts:(old.attempts||0)+1,last:Date.now()};save();refreshScorePill(n.id);
+  document.getElementById("stateLabel").textContent=status.replaceAll("_"," ");
+  document.getElementById("quizResult").innerHTML=`<div class="result"><strong>${correct}/${qs.length} correct · ${score}%</strong><br>${score>=80?"Mastered for now. Use Mixed Practice later for retention.":score>=60?"Partial mastery. Revisit the interactive pattern and reset the check.":"Needs review. Re-read the definition, use the lab, then reset the check."}</div>`;
+}
+function updateProgress(){const m=DATA.filter(n=>getState(n.id)==="mastered").length;document.getElementById("progressText").textContent=`${m} / ${DATA.length} mastered`;document.getElementById("progressFill").style.width=`${100*m/DATA.length}%`}
+function renderNext(){
+  const box=document.getElementById("nextList");box.innerHTML="";const candidates=DATA.filter(n=>getState(n.id)!=="mastered"&&depsMastered(n));
+  candidates.slice(0,8).forEach(n=>{const button=document.createElement("button");button.type="button";button.className="nextBtn";button.innerHTML=`${n.title} / <span lang="zh-CN">${n.zh}</span>`;button.addEventListener("click",()=>selectNode(n.id));box.appendChild(button)});
+  if(!candidates.length)box.textContent=DATA.every(n=>getState(n.id)==="mastered")?"All nodes mastered 🎉":"Review prerequisite nodes to continue.";
+}
+function renderCheat(filter=""){
+  const f=filter.trim().toLowerCase(),box=document.getElementById("cheatGrid");box.innerHTML="";
+  GLOSSARY.filter(x=>x.join(" ").toLowerCase().includes(f)).forEach(([en,zh,desc,formula])=>{const d=document.createElement("div");d.className="cheatItem";d.innerHTML=`<b>${en} <span class="zh" lang="zh-CN">· ${zh}</span></b><div class="formula">${formula}</div><div class="desc">${desc}</div>`;box.appendChild(d)});if(!box.children.length)box.innerHTML='<div class="tiny">No matching term.</div>';
+}
+function showMixed(){
+  const available=DATA.filter(n=>getState(n.id)!=="not_started"),src=available.length?available:DATA;
+  const chosen=shuffle(src.flatMap(n=>n.quiz.map(q=>({n,q})))).slice(0,12).map(x=>({...x,q:shuffleQuestion(x.q)}));
+  let graded=false;selected=null;window.currentQuiz=null;renderGraph();document.getElementById("stateLabel").textContent="mixed practice";
+  document.getElementById("details").innerHTML=`<div class="badges"><span class="badge">Mixed Practice</span><span class="badge">${chosen.length} questions</span></div><h2 id="lessonTitle" tabindex="-1">Interleaved Integer / Number Theory Review</h2><div class="zhTitle" lang="zh-CN">混合练习</div><p class="summary">Review ${available.length?"topics you have opened":"the full curriculum"}. Questions and answer choices are shuffled. Mixed Practice checks retention without changing node mastery.</p><button type="button" id="newMixedBtn">New mixed set</button><form id="mixedForm">${chosen.map((x,i)=>questionHTML({...x.q,q:`<span lang="zh-CN" style="color:#8ec5ff">${x.n.zh}</span> — ${x.q.q}`},i,`mq${i}`,"data-mq")).join("")}<button class="primary" type="submit">Grade mixed set</button></form><div id="quizResult" role="status" aria-live="polite"></div>`;
+  document.getElementById("newMixedBtn").addEventListener("click",showMixed);
+  document.getElementById("mixedForm").addEventListener("submit",e=>{e.preventDefault();if(graded)return;const c=gradeAnswers(e.currentTarget,chosen.map(x=>x.q),chosen.map((x,i)=>`mq${i}`),"data-mq");if(c===null)return;graded=true;document.getElementById("quizResult").innerHTML=`<div class="result"><strong>${c}/${chosen.length} · ${Math.round(100*c/chosen.length)}%</strong><br>Mixed Practice checks retention but does not directly change node colors.</div>`;});
+  document.getElementById("lessonTitle").focus({preventScroll:true});
+}
+document.getElementById("nextBtn").addEventListener("click",()=>{const n=DATA.find(n=>getState(n.id)!=="mastered"&&depsMastered(n));if(n)selectNode(n.id)});
+document.getElementById("cheatBtn").addEventListener("click",()=>{const panel=document.getElementById("cheatPanel"),open=panel.style.display!=="block";panel.style.display=open?"block":"none";document.getElementById("cheatBtn").setAttribute("aria-expanded",String(open));if(open){renderCheat();document.getElementById("cheatSearch").focus()}});
+document.getElementById("cheatSearch").addEventListener("input",e=>renderCheat(e.target.value));
+document.getElementById("mixedBtn").addEventListener("click",showMixed);
+document.getElementById("resetBtn").addEventListener("click",()=>{if(confirm("Reset all mastery progress?")){memoryStore={};try{localStorage.removeItem(STORAGE_KEY)}catch{}selected=null;window.currentQuiz=null;renderGraph();updateProgress();renderNext();document.getElementById("details").innerHTML='<div class="empty">Progress reset. Click a node to begin.</div>';document.getElementById("stateLabel").textContent="Select a node";document.getElementById("nextBtn").focus()}});
+renderGraph();updateProgress();renderNext();renderCheat();
+
+</script>
+</body></html>
