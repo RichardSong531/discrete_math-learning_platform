@@ -8,7 +8,7 @@ explore examples, practice, check mastery, and decide what to learn next.
 
 ## Current stage
 
-Six standalone HTML learning maps are available. Each bundles content, CSS, and
+Seven standalone HTML learning maps are available. Each bundles content, CSS, and
 JavaScript, with no build step, framework, or backend required. These are working
 prototypes, not a completed or independently reviewed curriculum.
 
@@ -20,7 +20,8 @@ prototypes, not a completed or independently reviewed curriculum.
 | Functions | [Map](modules/functions/index.html) · [Notes](modules/functions/README.md) | 30 | 120 |
 | Permutations | [Map](modules/permutations/index.html) · [Notes](modules/permutations/README.md) | 25 | 100 |
 | Integers | [Map](modules/integers/index.html) · [Notes](modules/integers/README.md) | 34 | 136 |
-| **Total** | | **162** | **686** |
+| Matrices | [Map](modules/matrices/index.html) · [Notes](modules/matrices/README.md) | 37 | 148 |
+| **Total** | | **199** | **834** |
 
 Existing features include dependency graphs, visual explanations, worked examples,
 interactive practice, common mistakes, mastery checks, mixed review, cheat sheets,
@@ -41,8 +42,9 @@ Or open [Logic](http://localhost:8000/modules/logic/),
 [Set Theory](http://localhost:8000/modules/sets/),
 [Relations](http://localhost:8000/modules/relations/),
 [Functions](http://localhost:8000/modules/functions/),
-[Permutations](http://localhost:8000/modules/permutations/), or
-[Integers](http://localhost:8000/modules/integers/).
+[Permutations](http://localhost:8000/modules/permutations/),
+[Integers](http://localhost:8000/modules/integers/), or
+[Matrices](http://localhost:8000/modules/matrices/).
 
 Alternatively, open the root `index.html` for the topic guide, or any module directly. A local server gives browser
 storage a consistent origin. Keep the same hostname and port to access saved progress.
@@ -61,6 +63,7 @@ modules/
   functions/   # index.html, README.md, references.md, coverage.md
   permutations/ # index.html, README.md, references.md, coverage.md
   integers/    # index.html, README.md, references.md, coverage.md
+  matrices/    # index.html, README.md, references.md, coverage.md
 docs/
   product-vision.md
   learning-model.md
@@ -84,6 +87,7 @@ extract shared data and components after stable patterns emerge.
 | Functions | Reviewed prototype |
 | Permutations | Reviewed prototype |
 | Integers | Reviewed prototype |
+| Matrices | Reviewed prototype |
 | Proofs | Planned |
 | Counting | Planned |
 | Graphs | Planned |
@@ -110,9 +114,9 @@ These features are not implemented. See the [product vision](docs/product-vision
 
 [Discrete Mathematics Resources](https://sites.google.com/view/discretemathematicsresources/home)
 is a proposed curriculum reference from the planning discussion. This import does not
-establish that the modules have been cross-checked against it. The Functions, Permutations, and Integers modules were reviewed against their supplied PDFs; see the
+establish that the modules have been cross-checked against it. The Functions, Permutations, Integers, and Matrices modules were reviewed against their supplied PDFs; see the
 [Functions](modules/functions/references.md), [Permutations](modules/permutations/references.md),
-and [Integers](modules/integers/references.md) source notes. Original source PDFs for Logic, Sets, and Relations still need verification. See the [reference register](docs/references.md).
+[Integers](modules/integers/references.md), and [Matrices](modules/matrices/references.md) source notes. Original source PDFs for Logic, Sets, and Relations still need verification. See the [reference register](docs/references.md).
 
 ## Contributing and license
 
