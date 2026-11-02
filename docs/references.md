@@ -11,7 +11,8 @@ verified during this import. Do not describe the modules as validated against it
 Source-page references are preserved in the HTML. Functions was reviewed against the supplied
 PDF by Jennifer F. Vasquez, Permutations against the supplied PDF by Steven T. Dougherty,
 Integers against the supplied `integer.pdf`, Matrices against the supplied
-`DiscreteBookMatrices.pdf`, and Counting against the supplied `counting.pdf`;
+`DiscreteBookMatrices.pdf`, Counting against the supplied `counting.pdf`, and Graphs against the five supplied
+`Graphs-pages-1.pdf` through `Graphs-pages-5.pdf`;
 see their module records for source details
 and review limitations. The original PDFs for Logic, Sets, and Relations still
 need identification. Filenames alone are insufficient bibliographic records.
@@ -24,6 +25,7 @@ need identification. Filenames alone are insufficient bibliographic records.
 - [Integers](../modules/integers/references.md)
 - [Matrices](../modules/matrices/references.md)
 - [Counting](../modules/counting/references.md)
+- [Graphs](../modules/graphs/references.md)
 
 ## Recording reviewed sources
 

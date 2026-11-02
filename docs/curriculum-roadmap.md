@@ -12,8 +12,8 @@
 | 6 | Integers | Reviewed prototype | Expand written proofs and algorithm-tracing practice |
 | 7 | Matrices | Reviewed prototype | Expand multi-step computation and written-proof practice |
 | 8 | Counting | Reviewed prototype | Expand multi-step counting and written-proof practice |
-| 9 | Proofs | Planned | Build a standalone map |
-| 10 | Graphs | Planned | Build a standalone map |
+| 9 | Graphs | Reviewed prototype | Expand graph construction, algorithm traces, and written proofs |
+| 10 | Proofs | Planned | Build a standalone map |
 | 11 | Recurrences | Planned | Build a standalone map |
 
 Sets includes a Logic-to-Sets bridge; Relations includes a Set/Logic prerequisite bridge;
@@ -24,7 +24,9 @@ and Counting builds on finite sets, factorials, and ordered versus unordered cho
 The suggested browsing order does not require finishing Permutations before studying Integers
 or finishing Integers before studying Matrices. Matrix operations also build on ideas from
 Functions, Relations, and Permutations. Counting can follow Sets and Permutations directly;
-Matrices is not a prerequisite.
+Matrices is not a prerequisite. Graphs builds on Sets and Relations; Matrices helps
+with adjacency representations, and Counting supports graph and coloring counts.
+The browsing route is a suggestion, not a requirement to finish every earlier map.
 Use these when designing the future cross-topic graph. The sequence is provisional;
 topics overlap and proof techniques may be introduced earlier.
 
