@@ -13,8 +13,9 @@
 | 7 | Matrices | Reviewed prototype | Expand multi-step computation and written-proof practice |
 | 8 | Counting | Reviewed prototype | Expand multi-step counting and written-proof practice |
 | 9 | Graphs | Reviewed prototype | Expand graph construction, algorithm traces, and written proofs |
-| 10 | Proofs | Planned | Build a standalone map |
-| 11 | Recurrences | Planned | Build a standalone map |
+| 10 | Posets | Reviewed prototype | Expand order construction, lattice reasoning, and written proofs |
+| 11 | Proofs | Planned | Build a standalone map |
+| 12 | Recurrences | Planned | Build a standalone map |
 
 Sets includes a Logic-to-Sets bridge; Relations includes a Set/Logic prerequisite bridge;
 Functions builds on Relations; Permutations begins with a Functions/bijections bridge;
@@ -26,6 +27,8 @@ or finishing Integers before studying Matrices. Matrix operations also build on 
 Functions, Relations, and Permutations. Counting can follow Sets and Permutations directly;
 Matrices is not a prerequisite. Graphs builds on Sets and Relations; Matrices helps
 with adjacency representations, and Counting supports graph and coloring counts.
+Posets builds on Relations and Sets, connecting partial orders and Hasse diagrams to lattices
+and Boolean algebra. Graphs helps with diagrams but is not a required preceding map.
 The browsing route is a suggestion, not a requirement to finish every earlier map.
 Use these when designing the future cross-topic graph. The sequence is provisional;
 topics overlap and proof techniques may be introduced earlier.

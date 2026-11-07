@@ -8,7 +8,7 @@ explore examples, practice, check mastery, and decide what to learn next.
 
 ## Current stage
 
-Nine standalone HTML learning maps are available. Each bundles content, CSS, and
+Ten standalone HTML learning maps are available. Each bundles content, CSS, and
 JavaScript, with no build step, framework, or backend required. These are working
 prototypes, not a completed or independently reviewed curriculum.
 
@@ -23,7 +23,8 @@ prototypes, not a completed or independently reviewed curriculum.
 | Matrices | [Map](modules/matrices/index.html) · [Notes](modules/matrices/README.md) | 37 | 148 |
 | Counting | [Map](modules/counting/index.html) · [Notes](modules/counting/README.md) | 31 | 124 |
 | Graphs | [Map](modules/graphs/index.html) · [Notes](modules/graphs/README.md) | 39 | 156 |
-| **Total** | | **269** | **1,114** |
+| Posets | [Map](modules/posets/index.html) · [Notes](modules/posets/README.md) | 41 | 164 |
+| **Total** | | **310** | **1,278** |
 
 Existing features include dependency graphs, visual explanations, worked examples,
 interactive practice, common mistakes, mastery checks, mixed review, cheat sheets,
@@ -47,8 +48,9 @@ Or open [Logic](http://localhost:8000/modules/logic/),
 [Permutations](http://localhost:8000/modules/permutations/),
 [Integers](http://localhost:8000/modules/integers/),
 [Matrices](http://localhost:8000/modules/matrices/),
-[Counting](http://localhost:8000/modules/counting/), or
-[Graphs](http://localhost:8000/modules/graphs/).
+[Counting](http://localhost:8000/modules/counting/),
+[Graphs](http://localhost:8000/modules/graphs/), or
+[Posets](http://localhost:8000/modules/posets/).
 
 Alternatively, open the root `index.html` for the topic guide, or any module directly. A local server gives browser
 storage a consistent origin. Keep the same hostname and port to access saved progress.
@@ -70,6 +72,7 @@ modules/
   matrices/    # index.html, README.md, references.md, coverage.md
   counting/    # index.html, README.md, references.md, coverage.md
   graphs/      # index.html, README.md, references.md, coverage.md
+  posets/      # index.html, README.md, references.md, coverage.md
 docs/
   product-vision.md
   learning-model.md
@@ -96,6 +99,7 @@ extract shared data and components after stable patterns emerge.
 | Matrices | Reviewed prototype |
 | Counting | Reviewed prototype |
 | Graphs | Reviewed prototype |
+| Posets | Reviewed prototype |
 | Proofs | Planned |
 | Recurrences | Planned |
 
@@ -120,10 +124,11 @@ These features are not implemented. See the [product vision](docs/product-vision
 
 [Discrete Mathematics Resources](https://sites.google.com/view/discretemathematicsresources/home)
 is a proposed curriculum reference from the planning discussion. This import does not
-establish that the modules have been cross-checked against it. The Functions, Permutations, Integers, Matrices, Counting, and Graphs modules were reviewed against their supplied PDFs; see the
+establish that the modules have been cross-checked against it. The Functions, Permutations, Integers, Matrices, Counting, Graphs, and Posets modules were reviewed against their supplied PDFs; see the
 [Functions](modules/functions/references.md), [Permutations](modules/permutations/references.md),
 [Integers](modules/integers/references.md), [Matrices](modules/matrices/references.md),
-[Counting](modules/counting/references.md), and [Graphs](modules/graphs/references.md) source notes. Original source PDFs for Logic, Sets, and Relations still need verification. See the [reference register](docs/references.md).
+[Counting](modules/counting/references.md), [Graphs](modules/graphs/references.md), and
+[Posets](modules/posets/references.md) source notes. Original source PDFs for Logic, Sets, and Relations still need verification. See the [reference register](docs/references.md).
 
 ## Contributing and license
 

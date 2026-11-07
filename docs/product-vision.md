@@ -5,7 +5,7 @@ through a visual mastery roadmap that supplements a Discrete Mathematics course.
 
 ## Available today
 
-Nine standalone maps with module-local practice and browser-local mastery.
+Ten standalone maps with module-local practice and browser-local mastery.
 Their content and interfaces remain prototypes requiring systematic review.
 
 ## Planned experience
