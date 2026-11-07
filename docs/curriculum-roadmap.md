@@ -14,8 +14,9 @@
 | 8 | Counting | Reviewed prototype | Expand multi-step counting and written-proof practice |
 | 9 | Graphs | Reviewed prototype | Expand graph construction, algorithm traces, and written proofs |
 | 10 | Posets | Reviewed prototype | Expand order construction, lattice reasoning, and written proofs |
-| 11 | Proofs | Planned | Build a standalone map |
-| 12 | Recurrences | Planned | Build a standalone map |
+| 11 | Proof Methods & Induction | Remaining | Build and review a standalone map |
+| 12 | Sequences & Recurrences | Remaining | Build and review a standalone map |
+| 13 | Discrete Probability | Remaining | Build and review a standalone map |
 
 Sets includes a Logic-to-Sets bridge; Relations includes a Set/Logic prerequisite bridge;
 Functions builds on Relations; Permutations begins with a Functions/bijections bridge;
@@ -29,18 +30,50 @@ Matrices is not a prerequisite. Graphs builds on Sets and Relations; Matrices he
 with adjacency representations, and Counting supports graph and coloring counts.
 Posets builds on Relations and Sets, connecting partial orders and Hasse diagrams to lattices
 and Boolean algebra. Graphs helps with diagrams but is not a required preceding map.
+Proof Methods & Induction consolidates direct proof, contraposition, contradiction,
+counterexamples, ordinary induction, and strong induction. Sequences & Recurrences
+connects recursive definitions, summations, induction, and elementary recurrence
+solving. Discrete Probability builds on Sets and Counting through sample spaces,
+events, conditional probability, and independence.
 The browsing route is a suggestion, not a requirement to finish every earlier map.
 Use these when designing the future cross-topic graph. The sequence is provisional;
 topics overlap and proof techniques may be introduced earlier.
 
+## Remaining-task handoff
+
+Complete the three remaining standalone maps in this order:
+
+1. **Proof Methods & Induction** — direct proof, contraposition, contradiction,
+   counterexamples, ordinary induction, and strong induction.
+2. **Sequences & Recurrences** — sequences, summations, recursive definitions,
+   initial conditions, and elementary recurrence solving.
+3. **Discrete Probability** — sample spaces, events, counting-based probability,
+   conditional probability, and independence.
+
+Finishing chapter 13 ends the independent-map production milestone. It does not
+mean the curriculum is finished. Before unified-platform work begins, perform one
+full repair and standardization pass across all thirteen chapters:
+
+- verify every module against its recorded sources and resolve open content notes;
+- align vocabulary, notation, chapter names, prerequisites, and cross-topic links;
+- review every question, answer key, explanation, worked example, and lab result;
+- standardize mastery thresholds, retries, mixed practice, saved progress, and reset behavior;
+- preserve stable node and question identifiers for future progress migration;
+- test navigation, keyboard access, focus behavior, narrow screens, and browser storage;
+- update the root guide, totals, module records, source register, and coverage reports; and
+- define the validated cross-topic prerequisite graph used by the future platform.
+
+The completion handoff should report which checks passed, which limitations remain,
+and which content or interaction decisions must carry into platform integration.
+
 ## Development stages
 
-1. **Independent interactive maps — current.** Import existing modules, document
-   operation and provenance, then review content and interactions.
-2. **Complete the curriculum.** Build missing maps and review prerequisites, examples,
-   answer keys, keyboard access, and small-screen use.
+1. **Independent interactive maps — current.** Complete the three remaining modules
+   so the repository contains all thirteen planned chapters.
+2. **Full-curriculum repair.** Apply the completion handoff above to every chapter,
+   including earlier prototypes and the three new modules.
 3. **Standardize content and graph.** Extract stable IDs and shared schemas from
-   working modules; validate prerequisites and question references.
+   the repaired modules; validate prerequisites and question references.
 4. **Unified website.** Build navigation and reusable components after content contracts stabilize.
 5. **Accounts and persistent mastery.** Add synchronized progress and local-progress migration.
 6. **Mistake collection and review queue.** Store useful feedback and schedule review.

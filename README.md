@@ -8,7 +8,7 @@ explore examples, practice, check mastery, and decide what to learn next.
 
 ## Current stage
 
-Ten standalone HTML learning maps are available. Each bundles content, CSS, and
+Ten of the planned thirteen standalone HTML learning maps are available. Each bundles content, CSS, and
 JavaScript, with no build step, framework, or backend required. These are working
 prototypes, not a completed or independently reviewed curriculum.
 
@@ -86,25 +86,30 @@ Only existing modules receive directories. Planned topics live in the roadmap un
 usable content exists. Keep modules standalone while developing the curriculum;
 extract shared data and components after stable patterns emerge.
 
-## Topic roadmap
+## Curriculum status and remaining work
 
-| World | Status |
-| --- | --- |
-| Logic | Prototype available |
-| Sets | Prototype available |
-| Relations | Prototype available |
-| Functions | Reviewed prototype |
-| Permutations | Reviewed prototype |
-| Integers | Reviewed prototype |
-| Matrices | Reviewed prototype |
-| Counting | Reviewed prototype |
-| Graphs | Reviewed prototype |
-| Posets | Reviewed prototype |
-| Proofs | Planned |
-| Recurrences | Planned |
+| Chapter | World | Status |
+| ---: | --- | --- |
+| 1 | Logic | Prototype available |
+| 2 | Sets | Prototype available |
+| 3 | Relations | Prototype available |
+| 4 | Functions | Reviewed prototype |
+| 5 | Permutations | Reviewed prototype |
+| 6 | Integers | Reviewed prototype |
+| 7 | Matrices | Reviewed prototype |
+| 8 | Counting | Reviewed prototype |
+| 9 | Graphs | Reviewed prototype |
+| 10 | Posets | Reviewed prototype |
+| 11 | Proof Methods & Induction | Remaining — build and review |
+| 12 | Sequences & Recurrences | Remaining — build and review |
+| 13 | Discrete Probability | Remaining — build and review |
 
-This is a proposed sequence, not a validated global prerequisite graph.
-See the [curriculum and development roadmap](docs/curriculum-roadmap.md).
+After chapter 13 is complete, the next handoff is a full-curriculum repair and
+standardization pass across all thirteen modules. That pass must reconcile source
+coverage, terminology, prerequisites, question quality, scoring and saved progress,
+navigation, accessibility, and small-screen behavior before the maps are integrated
+into the unified platform. This is a proposed sequence, not a validated global
+prerequisite graph. See the detailed [remaining-task handoff](docs/curriculum-roadmap.md).
 
 ## Learning philosophy
 
