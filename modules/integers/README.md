@@ -2,7 +2,8 @@
 
 Standalone interactive learning map with 34 knowledge nodes, 136 practice questions,
 and 48 glossary entries. Open [index.html](index.html), or use the local server in the
-[root README](../../README.md#run-locally). The topic navigation connects all six maps.
+[root README](../../README.md#run-locally). Topic navigation connects all available maps
+through the [topic guide](../../index.html).
 
 Start with basic integer arithmetic, Logic, and Sets. Coverage includes division with
 remainder, divisibility, parity, number bases, primes and factorization, gcd and lcm,

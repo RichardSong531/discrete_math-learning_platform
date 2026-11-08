@@ -8,7 +8,7 @@ explore examples, practice, check mastery, and decide what to learn next.
 
 ## Current stage
 
-Ten of the planned thirteen standalone HTML learning maps are available. Each bundles content, CSS, and
+Eleven of the planned thirteen standalone HTML learning maps are available. Each bundles content, CSS, and
 JavaScript, with no build step, framework, or backend required. These are working
 prototypes, not a completed or independently reviewed curriculum.
 
@@ -24,11 +24,14 @@ prototypes, not a completed or independently reviewed curriculum.
 | Counting | [Map](modules/counting/index.html) · [Notes](modules/counting/README.md) | 31 | 124 |
 | Graphs | [Map](modules/graphs/index.html) · [Notes](modules/graphs/README.md) | 39 | 156 |
 | Posets | [Map](modules/posets/index.html) · [Notes](modules/posets/README.md) | 41 | 164 |
-| **Total** | | **310** | **1,278** |
+| Proof Methods & Induction | [Map](modules/proofs/index.html) · [Notes](modules/proofs/README.md) | 40 | 160 |
+| **Total** | | **350** | **1,438** |
 
 Existing features include dependency graphs, visual explanations, worked examples,
 interactive practice, common mistakes, mastery checks, mixed review, cheat sheets,
 and recommended next concepts. Each module saves progress locally in the browser.
+Proof Methods & Induction also includes a per-node proof notebook; written drafts
+are saved separately from quiz scores and are not automatically graded.
 Accounts, cross-device sync, a shared cross-topic graph, and adaptive Daily Quests are planned.
 
 ## Run locally
@@ -49,8 +52,9 @@ Or open [Logic](http://localhost:8000/modules/logic/),
 [Integers](http://localhost:8000/modules/integers/),
 [Matrices](http://localhost:8000/modules/matrices/),
 [Counting](http://localhost:8000/modules/counting/),
-[Graphs](http://localhost:8000/modules/graphs/), or
-[Posets](http://localhost:8000/modules/posets/).
+[Graphs](http://localhost:8000/modules/graphs/),
+[Posets](http://localhost:8000/modules/posets/), or
+[Proof Methods & Induction](http://localhost:8000/modules/proofs/).
 
 Alternatively, open the root `index.html` for the topic guide, or any module directly. A local server gives browser
 storage a consistent origin. Keep the same hostname and port to access saved progress.
@@ -73,6 +77,7 @@ modules/
   counting/    # index.html, README.md, references.md, coverage.md
   graphs/      # index.html, README.md, references.md, coverage.md
   posets/      # index.html, README.md, references.md, coverage.md
+  proofs/      # index.html, README.md, references.md, coverage.md
 docs/
   product-vision.md
   learning-model.md
@@ -100,9 +105,13 @@ extract shared data and components after stable patterns emerge.
 | 8 | Counting | Reviewed prototype |
 | 9 | Graphs | Reviewed prototype |
 | 10 | Posets | Reviewed prototype |
-| 11 | Proof Methods & Induction | Remaining — build and review |
+| 11 | Proof Methods & Induction | Reviewed prototype — strong induction remains |
 | 12 | Sequences & Recurrences | Remaining — build and review |
 | 13 | Discrete Probability | Remaining — build and review |
+
+The Proof Methods & Induction map covers ordinary induction, including different
+starting indices. Strong induction remains a planned extension; see its
+[coverage notes](modules/proofs/coverage.md).
 
 After chapter 13 is complete, the next handoff is a full-curriculum repair and
 standardization pass across all thirteen modules. That pass must reconcile source
@@ -133,7 +142,9 @@ establish that the modules have been cross-checked against it. The Functions, Pe
 [Functions](modules/functions/references.md), [Permutations](modules/permutations/references.md),
 [Integers](modules/integers/references.md), [Matrices](modules/matrices/references.md),
 [Counting](modules/counting/references.md), [Graphs](modules/graphs/references.md), and
-[Posets](modules/posets/references.md) source notes. Original source PDFs for Logic, Sets, and Relations still need verification. See the [reference register](docs/references.md).
+[Posets](modules/posets/references.md) source notes. Proof Methods & Induction was reviewed against the supplied
+*Methods of Proof* PDF by Michael P. Allocca; see its [source notes](modules/proofs/references.md).
+Original source PDFs for Logic, Sets, and Relations still need verification. See the [reference register](docs/references.md).
 
 ## Contributing and license
 

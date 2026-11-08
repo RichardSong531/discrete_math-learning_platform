@@ -11,9 +11,18 @@ A knowledge node should explain one manageable concept and its prerequisites.
 
 Current maps use module-specific browser storage and distinguish learning/review states.
 Their UI labels mastery at 80% or above. This prototype scoring rule does not establish
-durable understanding. Recommendations operate within a module; cross-topic prerequisites
+durable understanding. In a four-question check, this means 4/4 for mastery;
+3/4 is 75% and marks partial progress. Recommendations operate within a module; cross-topic prerequisites
 are not enforced by a shared system.
+
+The Proof Methods & Induction module adds a per-node written-proof notebook.
+These drafts are not automatically graded or certified as valid proofs. They are
+stored separately from quiz scores in the same browser; resetting mastery preserves
+drafts, and clearing drafts preserves scores. A model step order or suggested proof
+strategy provides guidance, not a general proof-validity check.
 
 Future models should distinguish attempts, feedback, mastery evidence, and review
 scheduling. Validate these concepts across modules before introducing a common schema.
+The full-curriculum repair pass should also preserve the distinction between scored
+practice and ungraded drafts, including their separate persistence and reset behavior.
 Retain bilingual explanations where they clarify terminology.

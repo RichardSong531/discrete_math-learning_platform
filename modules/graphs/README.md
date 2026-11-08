@@ -3,7 +3,7 @@
 Standalone Graph Theory learning map with 39 knowledge nodes, 156 practice questions,
 and 47 bilingual glossary entries. Open [index.html](index.html), or use the server
 instructions in the [root README](../../README.md#run-locally). The topic guide and
-navigation connect all nine maps.
+navigation connect all available maps through the [topic guide](../../index.html).
 
 Start with Sets and Relations. Functions helps with isomorphisms and colorings;
 Matrices helps with adjacency representations; Counting supports enumeration and

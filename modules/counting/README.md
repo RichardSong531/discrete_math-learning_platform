@@ -2,7 +2,8 @@
 
 Standalone interactive learning map with 31 knowledge nodes, 124 practice questions,
 and 46 glossary entries. Open [index.html](index.html), or use the local server in the
-[root README](../../README.md#run-locally). Topic navigation connects all eight maps.
+[root README](../../README.md#run-locally). Topic navigation connects all available maps
+through the [topic guide](../../index.html).
 
 Start with basic arithmetic, Logic, and Sets. Functions and Permutations provide useful
 connections. The guide places Counting after Matrices for browsing; Matrices is not a

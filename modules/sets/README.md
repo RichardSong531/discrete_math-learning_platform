@@ -12,7 +12,8 @@ browser-local `localStorage`; there is no account or cross-device synchronizatio
 
 ## Import provenance
 
-Original file: `Set_Theory_Interactive_Knowledge_Map_Enhanced_v3_FIXED.html`. This import preserves the supplied HTML byte for byte.
+Original file: `Set_Theory_Interactive_Knowledge_Map_Enhanced_v3_FIXED.html`. The initial import preserved the supplied HTML byte for byte.
+The repository version now also includes shared topic navigation; source and content review remain outstanding.
 Edit `index.html` directly for future changes; use Git history instead of versioned filenames.
 
 See [references](references.md) and [contributing](../../CONTRIBUTING.md).

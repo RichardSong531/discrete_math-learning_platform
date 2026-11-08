@@ -3,7 +3,7 @@
 Standalone Partially Ordered Sets learning map with 41 knowledge nodes, 164 practice
 questions, and 48 bilingual glossary entries. Open [index.html](index.html), or follow
 the server instructions in the [root README](../../README.md#run-locally). The shared
-topic guide connects all ten maps and provides a suggested learning sequence.
+[topic guide](../../index.html) connects all available maps and provides a suggested learning sequence.
 
 Start with Sets and Relations. Integers supplies divisibility, prime factorization,
 and gcd/lcm; Functions helps with isomorphisms; Logic supports Boolean operations
