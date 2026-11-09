@@ -21,6 +21,13 @@ stored separately from quiz scores in the same browser; resetting mastery preser
 drafts, and clearing drafts preserves scores. A model step order or suggested proof
 strategy provides guidance, not a general proof-validity check.
 
+Discrete Probability combines finite outcome enumeration and formula-based
+calculators with random simulations. A simulation illustrates variability and
+approximates a model's probabilities; it does not prove a probability identity.
+Learners should state assumptions such as equal likelihood, independence, and
+replacement before choosing a formula. The module's scored evidence comes from
+multiple-choice checks; it does not grade written probability solutions.
+
 Future models should distinguish attempts, feedback, mastery evidence, and review
 scheduling. Validate these concepts across modules before introducing a common schema.
 The full-curriculum repair pass should also preserve the distinction between scored

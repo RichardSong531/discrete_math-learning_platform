@@ -2,15 +2,22 @@
 
 ## Current progress
 
-Eleven of thirteen standalone maps are available, with 350 knowledge nodes and
-1,438 practice questions. Eight maps, from Functions through Proof Methods &
-Induction, have been reviewed against supplied PDFs. Logic, Sets, and Relations
+Twelve of thirteen standalone maps are available, with 394 knowledge nodes and
+1,614 practice questions. Nine maps, from Functions through Discrete Probability,
+have been reviewed against supplied PDFs. Logic, Sets, and Relations
 still require source verification and content review.
 
-The latest addition is [Proof Methods & Induction](../modules/proofs/README.md):
+The latest addition is [Discrete Probability](../modules/probability/README.md):
+44 nodes and 176 questions covering sample spaces, counting models, conditional
+probability, random variables, and moments. Its [coverage report](../modules/probability/coverage.md)
+records source and interaction checks and the limits of its supplemental material.
+Chapter 13 is available before chapter 12, Sequences & Recurrences. Chapter numbers
+retain the planned curriculum order; the browsing route connects available maps.
+
+[Proof Methods & Induction](../modules/proofs/README.md) remains available with
 40 nodes, 160 questions, and a separate notebook for ungraded written drafts.
-Its [coverage report](../modules/proofs/coverage.md) records the source and browser
-checks, including the remaining strong-induction scope. Prototype availability
+Its [coverage report](../modules/proofs/coverage.md) records the remaining
+strong-induction scope. Prototype availability
 does not mean that every planned learning outcome has been completed.
 
 ## Topic worlds
@@ -29,7 +36,7 @@ does not mean that every planned learning outcome has been completed.
 | 10 | Posets | Reviewed prototype | Expand order construction, lattice reasoning, and written proofs |
 | 11 | Proof Methods & Induction | Reviewed prototype | Add strong induction and expand written-proof practice |
 | 12 | Sequences & Recurrences | Remaining | Build and review a standalone map |
-| 13 | Discrete Probability | Remaining | Build and review a standalone map |
+| 13 | Discrete Probability | Reviewed prototype | Expand multi-step model selection and written probability reasoning |
 
 Sets includes a Logic-to-Sets bridge; Relations includes a Set/Logic prerequisite bridge;
 Functions builds on Relations; Permutations begins with a Functions/bijections bridge;
@@ -49,26 +56,26 @@ It can follow Logic and basic integer reasoning directly; Posets is not a prereq
 Strong induction remains a planned extension. Sequences & Recurrences
 connects recursive definitions, summations, induction, and elementary recurrence
 solving. Discrete Probability builds on Sets and Counting through sample spaces,
-events, conditional probability, and independence.
+events, conditional probability, and independence. Its random walks, graph hitting
+probabilities, Poisson distribution, and higher moments offer supplemental depth;
+their inclusion does not establish coverage of a particular CSE 16 offering or exam.
 The browsing route is a suggestion, not a requirement to finish every earlier map.
 Use these when designing the future cross-topic graph. The sequence is provisional;
 topics overlap and proof techniques may be introduced earlier.
 
 ## Remaining-task handoff
 
-Complete the two remaining standalone maps in this order:
-
-1. **Sequences & Recurrences** — sequences, summations, recursive definitions,
-   initial conditions, and elementary recurrence solving.
-2. **Discrete Probability** — sample spaces, events, counting-based probability,
-   conditional probability, and independence.
+Complete the one remaining standalone map: **Sequences & Recurrences** —
+sequences, summations, recursive definitions, initial conditions, and elementary
+recurrence solving. Discrete Probability is already available as chapter 13;
+do not interpret its arrival as completion of the thirteen-map milestone.
 
 Chapter 11 is available as a reviewed prototype. Its remaining scope includes strong
 induction and more written-proof practice. Carry these items into the full-curriculum
 repair pass; ordinary induction with a different starting index is not strong induction.
 
-Finishing chapter 13 ends the independent-map production milestone. It does not
-mean the curriculum is finished. Before unified-platform work begins, perform one
+Having all thirteen maps available ends the independent-map production milestone.
+It does not mean the curriculum is finished. Before unified-platform work begins, perform one
 full repair and standardization pass across all thirteen chapters:
 
 - verify every module against its recorded sources and resolve open content notes;
@@ -86,7 +93,7 @@ and which content or interaction decisions must carry into platform integration.
 
 ## Development stages
 
-1. **Independent interactive maps — current.** Complete the two remaining modules
+1. **Independent interactive maps — current.** Complete Sequences & Recurrences
    so the repository contains all thirteen planned chapters.
 2. **Full-curriculum repair.** Apply the completion handoff above to every chapter,
    including earlier prototypes and the final three chapters.

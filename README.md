@@ -8,7 +8,7 @@ explore examples, practice, check mastery, and decide what to learn next.
 
 ## Current stage
 
-Eleven of the planned thirteen standalone HTML learning maps are available. Each bundles content, CSS, and
+Twelve of the planned thirteen standalone HTML learning maps are available. Each bundles content, CSS, and
 JavaScript, with no build step, framework, or backend required. These are working
 prototypes, not a completed or independently reviewed curriculum.
 
@@ -25,7 +25,8 @@ prototypes, not a completed or independently reviewed curriculum.
 | Graphs | [Map](modules/graphs/index.html) · [Notes](modules/graphs/README.md) | 39 | 156 |
 | Posets | [Map](modules/posets/index.html) · [Notes](modules/posets/README.md) | 41 | 164 |
 | Proof Methods & Induction | [Map](modules/proofs/index.html) · [Notes](modules/proofs/README.md) | 40 | 160 |
-| **Total** | | **350** | **1,438** |
+| Discrete Probability | [Map](modules/probability/index.html) · [Notes](modules/probability/README.md) | 44 | 176 |
+| **Total** | | **394** | **1,614** |
 
 Existing features include dependency graphs, visual explanations, worked examples,
 interactive practice, common mistakes, mastery checks, mixed review, cheat sheets,
@@ -53,8 +54,9 @@ Or open [Logic](http://localhost:8000/modules/logic/),
 [Matrices](http://localhost:8000/modules/matrices/),
 [Counting](http://localhost:8000/modules/counting/),
 [Graphs](http://localhost:8000/modules/graphs/),
-[Posets](http://localhost:8000/modules/posets/), or
-[Proof Methods & Induction](http://localhost:8000/modules/proofs/).
+[Posets](http://localhost:8000/modules/posets/),
+[Proof Methods & Induction](http://localhost:8000/modules/proofs/), or
+[Discrete Probability](http://localhost:8000/modules/probability/).
 
 Alternatively, open the root `index.html` for the topic guide, or any module directly. A local server gives browser
 storage a consistent origin. Keep the same hostname and port to access saved progress.
@@ -78,6 +80,7 @@ modules/
   graphs/      # index.html, README.md, references.md, coverage.md
   posets/      # index.html, README.md, references.md, coverage.md
   proofs/      # index.html, README.md, references.md, coverage.md
+  probability/ # index.html, README.md, references.md, coverage.md
 docs/
   product-vision.md
   learning-model.md
@@ -107,13 +110,16 @@ extract shared data and components after stable patterns emerge.
 | 10 | Posets | Reviewed prototype |
 | 11 | Proof Methods & Induction | Reviewed prototype — strong induction remains |
 | 12 | Sequences & Recurrences | Remaining — build and review |
-| 13 | Discrete Probability | Remaining — build and review |
+| 13 | Discrete Probability | Reviewed prototype |
 
 The Proof Methods & Induction map covers ordinary induction, including different
 starting indices. Strong induction remains a planned extension; see its
 [coverage notes](modules/proofs/coverage.md).
 
-After chapter 13 is complete, the next handoff is a full-curriculum repair and
+Chapter 13 is available before chapter 12. Sequences & Recurrences is the only
+remaining map to build; chapter numbers retain the planned curriculum order.
+
+Once all thirteen maps are available, the next handoff is a full-curriculum repair and
 standardization pass across all thirteen modules. That pass must reconcile source
 coverage, terminology, prerequisites, question quality, scoring and saved progress,
 navigation, accessibility, and small-screen behavior before the maps are integrated
@@ -144,6 +150,8 @@ establish that the modules have been cross-checked against it. The Functions, Pe
 [Counting](modules/counting/references.md), [Graphs](modules/graphs/references.md), and
 [Posets](modules/posets/references.md) source notes. Proof Methods & Induction was reviewed against the supplied
 *Methods of Proof* PDF by Michael P. Allocca; see its [source notes](modules/proofs/references.md).
+Discrete Probability was reviewed against Joseph Klobusicky's supplied 41-page
+*Discrete Probability* PDF; see its [source notes](modules/probability/references.md).
 Original source PDFs for Logic, Sets, and Relations still need verification. See the [reference register](docs/references.md).
 
 ## Contributing and license

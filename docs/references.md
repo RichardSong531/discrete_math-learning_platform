@@ -14,7 +14,8 @@ Integers against the supplied `integer.pdf`, Matrices against the supplied
 `DiscreteBookMatrices.pdf`, Counting against the supplied `counting.pdf`, Graphs against the five supplied
 `Graphs-pages-1.pdf` through `Graphs-pages-5.pdf`, and Posets against the supplied `Poset.pdf`.
 Proof Methods & Induction was reviewed against the supplied 23-page *Methods of Proof*
-PDF by Michael P. Allocca. See their module records for source details
+PDF by Michael P. Allocca. Discrete Probability was reviewed against Joseph
+Klobusicky's supplied 41-page *Discrete Probability* PDF. See their module records for source details
 and review limitations. The original PDFs for Logic, Sets, and Relations still
 need identification. Filenames alone are insufficient bibliographic records.
 
@@ -29,6 +30,7 @@ need identification. Filenames alone are insufficient bibliographic records.
 - [Graphs](../modules/graphs/references.md)
 - [Posets](../modules/posets/references.md)
 - [Proof Methods & Induction](../modules/proofs/references.md)
+- [Discrete Probability](../modules/probability/references.md)
 
 ## Recording reviewed sources
 
