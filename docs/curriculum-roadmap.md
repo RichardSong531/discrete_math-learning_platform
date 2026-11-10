@@ -2,17 +2,17 @@
 
 ## Current progress
 
-Twelve of thirteen standalone maps are available, with 394 knowledge nodes and
-1,614 practice questions. Nine maps, from Functions through Discrete Probability,
+All thirteen planned standalone maps are available, with 432 knowledge nodes and
+1,766 practice questions. Ten maps, from Functions through Discrete Probability,
 have been reviewed against supplied PDFs. Logic, Sets, and Relations
 still require source verification and content review.
 
-The latest addition is [Discrete Probability](../modules/probability/README.md):
-44 nodes and 176 questions covering sample spaces, counting models, conditional
-probability, random variables, and moments. Its [coverage report](../modules/probability/coverage.md)
-records source and interaction checks and the limits of its supplemental material.
-Chapter 13 is available before chapter 12, Sequences & Recurrences. Chapter numbers
-retain the planned curriculum order; the browsing route connects available maps.
+The latest addition is chapter 12, [Sequences & Recurrences](../modules/sequences/README.md):
+38 nodes and 152 questions covering sequence notation, summations, induction,
+recurrence solving, generating functions, and optional matrix methods. Its
+[coverage report](../modules/sequences/coverage.md) records source and interaction
+checks and remaining limitations. The browsing route now connects all thirteen
+chapters in their planned order, ending with Discrete Probability.
 
 [Proof Methods & Induction](../modules/proofs/README.md) remains available with
 40 nodes, 160 questions, and a separate notebook for ungraded written drafts.
@@ -35,7 +35,7 @@ does not mean that every planned learning outcome has been completed.
 | 9 | Graphs | Reviewed prototype | Expand graph construction, algorithm traces, and written proofs |
 | 10 | Posets | Reviewed prototype | Expand order construction, lattice reasoning, and written proofs |
 | 11 | Proof Methods & Induction | Reviewed prototype | Add strong induction and expand written-proof practice |
-| 12 | Sequences & Recurrences | Remaining | Build and review a standalone map |
+| 12 | Sequences & Recurrences | Reviewed prototype | Consolidate induction coverage and expand recurrence derivations and written practice |
 | 13 | Discrete Probability | Reviewed prototype | Expand multi-step model selection and written probability reasoning |
 
 Sets includes a Logic-to-Sets bridge; Relations includes a Set/Logic prerequisite bridge;
@@ -53,9 +53,10 @@ and Boolean algebra. Graphs helps with diagrams but is not a required preceding 
 Proof Methods & Induction consolidates direct proof, contraposition, contradiction,
 counterexamples, and ordinary induction, including different starting indices.
 It can follow Logic and basic integer reasoning directly; Posets is not a prerequisite.
-Strong induction remains a planned extension. Sequences & Recurrences
-connects recursive definitions, summations, induction, and elementary recurrence
-solving. Discrete Probability builds on Sets and Counting through sample spaces,
+Strong induction remains a planned extension to the Proofs map. Sequences & Recurrences
+introduces strong induction and connects recursive definitions, summations, induction,
+and recurrence solving; reconcile these chapters during the repair pass. Generating
+functions provide further recurrence-solving depth, and matrix methods are optional. Discrete Probability builds on Sets and Counting through sample spaces,
 events, conditional probability, and independence. Its random walks, graph hitting
 probabilities, Poisson distribution, and higher moments offer supplemental depth;
 their inclusion does not establish coverage of a particular CSE 16 offering or exam.
@@ -65,17 +66,16 @@ topics overlap and proof techniques may be introduced earlier.
 
 ## Remaining-task handoff
 
-Complete the one remaining standalone map: **Sequences & Recurrences** —
-sequences, summations, recursive definitions, initial conditions, and elementary
-recurrence solving. Discrete Probability is already available as chapter 13;
-do not interpret its arrival as completion of the thirteen-map milestone.
+All thirteen planned standalone maps are now available. The production milestone
+is reached; the next task is the **full-curriculum repair and standardization pass**.
+Availability does not certify every learning outcome, source, or interaction.
 
-Chapter 11 is available as a reviewed prototype. Its remaining scope includes strong
-induction and more written-proof practice. Carry these items into the full-curriculum
-repair pass; ordinary induction with a different starting index is not strong induction.
+Chapter 11 remains a reviewed prototype with a strong-induction gap and more
+written-proof practice to add. Chapter 12 now introduces strong induction; align
+terminology, prerequisites, and examples across both chapters during the repair pass.
+Ordinary induction with a different starting index is not strong induction.
 
-Having all thirteen maps available ends the independent-map production milestone.
-It does not mean the curriculum is finished. Before unified-platform work begins, perform one
+The curriculum is not yet finished. Before unified-platform work begins, perform one
 full repair and standardization pass across all thirteen chapters:
 
 - verify every module against its recorded sources and resolve open content notes;
@@ -93,9 +93,9 @@ and which content or interaction decisions must carry into platform integration.
 
 ## Development stages
 
-1. **Independent interactive maps — current.** Complete Sequences & Recurrences
-   so the repository contains all thirteen planned chapters.
-2. **Full-curriculum repair.** Apply the completion handoff above to every chapter,
+1. **Independent interactive maps — available.** All thirteen planned chapter maps
+   are present; content and interaction review continues in the next stage.
+2. **Full-curriculum repair — next.** Apply the completion handoff above to every chapter,
    including earlier prototypes and the final three chapters.
 3. **Standardize content and graph.** Extract stable IDs and shared schemas from
    the repaired modules; validate prerequisites and question references.

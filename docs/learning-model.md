@@ -21,6 +21,12 @@ stored separately from quiz scores in the same browser; resetting mastery preser
 drafts, and clearing drafts preserves scores. A model step order or suggested proof
 strategy provides guidance, not a general proof-validity check.
 
+Sequences & Recurrences lets learners compare iterated terms with proposed formulas.
+Agreement on finitely many terms illustrates a pattern; it does not prove a claim
+for all indices. Its fixed proof-order exercises and multiple-choice checks do not
+grade written proofs. Use the [Proofs notebook](../modules/proofs/index.html) for
+ungraded drafts and review the reasoning separately.
+
 Discrete Probability combines finite outcome enumeration and formula-based
 calculators with random simulations. A simulation illustrates variability and
 approximates a model's probabilities; it does not prove a probability identity.

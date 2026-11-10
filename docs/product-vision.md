@@ -5,14 +5,15 @@ through a visual mastery roadmap that supplements a Discrete Mathematics course.
 
 ## Available today
 
-Twelve standalone maps with module-local practice and browser-local mastery.
+Thirteen standalone maps with module-local practice and browser-local mastery.
 Their content and interfaces remain prototypes requiring systematic review.
 The shared topic guide connects the available maps. Proof Methods & Induction
 also saves ungraded written drafts locally, separately from quiz progress.
 
-Discrete Probability is available; Sequences & Recurrences remains to be built. After all
-thirteen maps are available, complete the [curriculum repair handoff](curriculum-roadmap.md#remaining-task-handoff)
-before integrating them into a unified platform.
+All thirteen planned maps are available, including Sequences & Recurrences and
+Discrete Probability. Complete the [curriculum repair handoff](curriculum-roadmap.md#remaining-task-handoff)
+before integrating them into a unified platform; map availability does not mean
+the curriculum or platform is complete.
 
 ## Planned experience
 
